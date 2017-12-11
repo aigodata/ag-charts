@@ -21,20 +21,20 @@ $(function () {
 				fontWeight: 'normal',
 				fontSize: 12
 			},
-			top: '10',
-			left: '10'
+			top: '20',
+			left: '20'
 		},
 		//网格
 		grid: {
-			top: '60',
-			left: '40',
-			right: '30',
-			height: '186'
+			top: '70',
+			left: '50',
+			right: '40',
+			height: '216'
 		},
 		//图例
 		legend: {
-			top: 10,
-			right: 10,
+			top: 20,
+			right: 20,
 			data: ['1990', '2015'],
 			itemGap: 18,
 			textStyle: {

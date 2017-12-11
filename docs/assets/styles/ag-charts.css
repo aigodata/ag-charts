@@ -5,24 +5,24 @@
 }
 
 /*头部*/
-.ag-charts-bg .aigo-header{
+.ag-charts-bg .aigo-header {
   position: fixed;
   z-index: 2;
 }
 
 /*外层*/
-.ag-charts-bg .rx-wrap{
+.ag-charts-bg .rx-wrap {
   padding-top: 50px;
 }
 
 /*内容*/
-.ag-charts-content{
+.ag-charts-content {
   height: 100%;
   overflow-y: auto;
 }
 
 /*右侧*/
-.ag-charts-content .rx-page-component{
+.ag-charts-content .rx-page-component {
   padding: 0 30px 30px 270px;
 }
 
@@ -73,14 +73,14 @@
 }
 
 /*图表*/
-.ag-chart-item{
+.ag-chart-item {
   margin-top: 30px;
 }
 
 /*图表背景*/
-.ag-chart-bg{
+.ag-chart-bg {
   background: #fff;
-  box-shadow: 0 3px 14px rgba(110,127,136,.1);
+  box-shadow: 0 3px 14px rgba(110, 127, 136, .1);
 }
 
 /*每个图表*/

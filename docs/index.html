@@ -2,11 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta
-    content="width=device-width,minimum-scale=1.00001,maximum-scale=1.00001,shrink-to-fit=no,user-scalable=no,minimal-ui"
-    name="viewport"/>
   <title></title>
-  <link rel="stylesheet" type="text/css" href="assets/styles/github.css">
   <link rel="stylesheet" type="text/css" href="assets/styles/custom.css">
   <!--图表样式-->
   <link rel="stylesheet" type="text/css" href="assets/styles/ag-charts.css">
@@ -33,7 +29,7 @@
       <!--<a target="_blank" href="simple.html">示例</a>-->
     </li>
     <li class="aigo-menu-item">
-      <a href="changelog.html">更新日志</a>
+      <!--<a href="changelog.html">更新日志</a>-->
     </li>
     <li class="aigo-menu-item">
       <!--<a href="commonProblem.html">常见问题</a>-->
@@ -55,7 +51,7 @@
     <div class="ag-sidebar">
       <ul class="web-font">
         <li>
-          <h2 style="margin-bottom: 8px">ag-charts</h2>
+          <!--<h2 style="margin-bottom: 8px">ag-charts</h2>-->
         </li>
         <li>
           <a href="#start">Start 快速上手</a>
@@ -64,49 +60,46 @@
           <a href="#scatter">Scatter 散点图</a>
         </li>
         <li>
-          <a href="">line 折线图</a>
+          <a href="">line 折线图 (更新中...)</a>
         </li>
         <li>
-          <a href="">Bar 柱状图</a>
+          <a href="">Bar 柱状图 (更新中...)</a>
         </li>
         <li>
-          <a href="">Pie 饼图</a>
+          <a href="">Pie 饼图 (更新中...)</a>
         </li>
         <li>
-          <a href="">Radar 雷达图</a>
+          <a href="">Radar 雷达图 (更新中...)</a>
         </li>
         <li>
-          <a href="">K线图</a>
+          <a href="">Candlestick 烛形图 (更新中...)</a>
         </li>
         <li>
-          <a href="">热力图</a>
+          <a href="">Graph 关系图 (更新中...)</a>
         </li>
         <li>
-          <a href="">关系图</a>
+          <a href="">Tree 树状图 (更新中...)</a>
         </li>
         <li>
-          <a href="">树状图</a>
+          <a href="">Treemap 矩形树图 (更新中...)</a>
         </li>
         <li>
-          <a href="">矩形树图</a>
+          <a href="">Parallel 平行坐标 (更新中...)</a>
         </li>
         <li>
-          <a href="">平行坐标</a>
+          <a href="">Sankey 桑基图 (更新中...)</a>
         </li>
         <li>
-          <a href="">桑基图</a>
+          <a href="">Funnel 漏斗图 (更新中...)</a>
         </li>
         <li>
-          <a href="">漏斗图</a>
+          <a href="">Gauge 仪表盘 (更新中...)</a>
         </li>
         <li>
-          <a href="">仪表盘</a>
+          <a href="">日历图 (更新中...)</a>
         </li>
         <li>
-          <a href="">日历图</a>
-        </li>
-        <li>
-          <a href="">地图</a>
+          <a href="">Map 地图 (更新中...)</a>
         </li>
       </ul>
     </div>
@@ -124,16 +117,11 @@
         <!--每段描述-->
         <div>
           <h3>前言</h3>
-          <p>ag-charts是站在巨人的肩膀上, 底层使用了大家熟悉图表库(例:echarts v3.8), 我们只想优化展示使图表变得更漂亮就可以了.</p>
+          <p>ag-charts是站在巨人的肩膀上, 底层使用了大家熟悉图表库(例:echarts v3.8), 我们优化了展示. 对图表进行了封装.</p>
         </div>
         <div>
           <h3>自我介绍</h3>
-          <p>ag-charts尽量避免重复发明轮子, 不跟大公司一样去争面子, 浪费研发资源, 支持模块化加载. 方便换肤. </p>
-        </div>
-        <!--每段描述-->
-        <div>
-          <h3>浏览器兼容性</h3>
-          <p>ie10+, edge12+, chrome50+, safari9+, firefox35+</p>
+          <p>ag-charts尽量避免重复发明轮子, 浪费研发资源, 支持模块化加载. 方便换肤. </p>
         </div>
         <!--每段描述-->
         <div>
@@ -176,15 +164,22 @@
 </div>
 <!--脚本库-->
 <script type="text/javascript" src="assets/scripts/jquery.min.js"></script>
-<!--复制插件-->
-<script type="text/javascript" src="assets/scripts/clipboard.min.js"></script>
-<!--代码高亮-->
-<script type="text/javascript" src="assets/scripts/highlight.pack.min.js"></script>
+<script type="text/javascript" src="assets/scripts/axios.min.js"></script>
 <!--echarts 图表库-->
 <script type="text/javascript" src="src/echarts.min.js"></script>
+<!-- agChart -->
+<script type="text/javascript" src="src/ag-charts.js"></script>
 <!--散点图-->
-<script type="text/javascript" src="src/scatter/scatter-charts.js"></script>
-<!-- 自定义脚本 -->
-<script type="text/javascript" src="assets/scripts/tooltips.js"></script>
+<script type="text/javascript" src="src/scatter/scatter-rand.js"></script>
+<script>
+  // 当窗口变动时重新加载echarts图表
+  //window.onresize = function () {
+  //scatter_size_rand.resize();
+  //}
+
+  axios.get('src/scatter/scatter-rand.json').then(function (response) {
+    agChart.scatter.rand.init('#scatter-size-rand', '', response.data);
+  });
+</script>
 </body>
 </html>

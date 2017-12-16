@@ -1,6 +1,22 @@
 /*
-	*散点图
-*/
+ * 散点图
+ */
+
+;(function (gloabal, fun) {
+	if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
+		module.exports = fun();
+	} else if (typeof define === 'function'
+		&& (typeof define.amd === 'object' || typeof define.cmd === 'object') ) {
+		define(fun);
+	} else {
+		gloabal.flowgrid = fun();
+	}
+})(window.pt || window, function (flowgrid) {
+	'use strict';
+
+
+
+});
 
 $(function () {
 

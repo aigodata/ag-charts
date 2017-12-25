@@ -43,24 +43,28 @@
 			legend: {
 				top: 20,
 				right: 20,
-				data: ['邮件营销', '联盟广告','视频广告'],
+				data: ['邮件营销', '联盟广告', '视频广告'],
 				itemGap: 18,
 				textStyle: {
 					color: '#888',
 					fontSize: 12
 				},
-				itemWidth: 8,
-				itemHeight: 8
+				itemWidth: 12,
+				itemHeight: 6
 			},
 			//提示框
 			tooltip: {
 				trigger: 'axis',
-				backgroundColor: 'rgba(0,0,0,.7)',
+				axisPointer: {
+					type: 'none'
+				},
+				backgroundColor: 'rgba(0,0,0,.7)'
 			},
 			//x轴
 			xAxis: {
 				type: 'category',
-				data : ['周一','周二','周三','周四','周五','周六','周日'],
+				boundaryGap: false,
+				data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
 				scale: true,
 				splitLine: {
 					show: false
@@ -109,30 +113,33 @@
 				{
 					name: '邮件营销',
 					data: null,
+					smooth: true,
 					type: 'line',
 					itemStyle: {
 						normal: {
-							color: '#30a8ff'
+							color: '#ff5050'
 						}
 					}
 				},
 				{
 					name: '联盟广告',
 					data: null,
+					smooth: true,
 					type: 'line',
 					itemStyle: {
 						normal: {
-							color: '#f53e3e'
+							color: '#9bd80a'
 						}
 					}
 				},
 				{
 					name: '视频广告',
 					data: null,
+					smooth: true,
 					type: 'line',
 					itemStyle: {
 						normal: {
-							color: '#000'
+							color: '#30a8ff'
 						}
 					}
 				}]
@@ -153,6 +160,9 @@
 
 			this.option.series[1].name = data.legend[1];
 			this.option.series[1].data = data.data[1];
+
+			this.option.series[2].name = data.legend[2];
+			this.option.series[2].data = data.data[2];
 		};
 
 		this.setStyle = function () {

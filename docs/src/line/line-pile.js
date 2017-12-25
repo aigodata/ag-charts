@@ -115,6 +115,8 @@
 					data: null,
 					smooth: true,
 					type: 'line',
+					symbol:'circle',
+					symbolSize:5,
 					itemStyle: {
 						normal: {
 							color: '#ff5050'
@@ -126,6 +128,8 @@
 					data: null,
 					smooth: true,
 					type: 'line',
+					symbol:'circle',
+					symbolSize:5,
 					itemStyle: {
 						normal: {
 							color: '#9bd80a'
@@ -137,6 +141,8 @@
 					data: null,
 					smooth: true,
 					type: 'line',
+					symbol:'circle',
+					symbolSize:5,
 					itemStyle: {
 						normal: {
 							color: '#30a8ff'

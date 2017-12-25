@@ -179,8 +179,8 @@
           <!--每个条目 -- 折线图-->
           <div class="rx-fl ag-col-1-2 ag-padding-left-large">
             <div class="ag-chart-bg">
-              <!--折线图 -- 圆点大小相等 -->
-              <div id="" class="ag-chart"></div>
+              <!--折线图 -- 堆叠区域图 -->
+              <div id="line-area" class="ag-chart"></div>
             </div>
           </div>
         </div>
@@ -201,6 +201,8 @@
 <script type="text/javascript" src="src/scatter/scatter-equal.js"></script>
 <!-- 折线图 堆叠 -->
 <script type="text/javascript" src="src/line/line-pile.js"></script>
+<!-- 折线图 堆叠区域 -->
+<script type="text/javascript" src="src/line/line-area.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -217,9 +219,14 @@
     agChart.scatter.equal.init('#scatter-equal', '', response.data);
   });
 
-  // 散点图 圆点大小相等
+  // 折线图 堆叠
   axios.get('src/line/line-pile.json').then(function (response) {
     agChart.line.pile.init('#line-pile', '', response.data);
+  });
+
+  // 折线图 堆叠区域
+  axios.get('src/line/line-area.json').then(function (response) {
+    agChart.line.area.init('#line-area', '', response.data);
   });
 
 </script>

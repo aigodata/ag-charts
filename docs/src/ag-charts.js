@@ -15,7 +15,9 @@
 
 	agChart = {
 		// 散点图
-		scatter: {}
+		scatter: {},
+		// 折线图
+		line: {}
 	};
 
 	agChart.common = {

@@ -1,6 +1,6 @@
 /*
- * 散点图
- * 描述: 散点大小尺寸一样
+ * 折线图
+ * 描述: 堆叠
  */
 ;(function (global, fun) {
 	if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
@@ -9,7 +9,7 @@
 		&& (typeof define.amd === 'object' || typeof define.cmd === 'object')) {
 		define(fun);
 	} else {
-		global.agChart.scatter.equal = fun();
+		global.agChart.line.pile = fun();
 	}
 })(window, function () {
 	'use strict';
@@ -23,7 +23,7 @@
 		this.option = {
 			//标题
 			title: {
-				text: '男性女性身高体重分布',
+				text: '折线图堆叠',
 				textStyle: {
 					color: '#888',
 					fontWeight: 'normal',
@@ -43,7 +43,7 @@
 			legend: {
 				top: 20,
 				right: 20,
-				data: ['男性', '女性'],
+				data: ['邮件营销', '联盟广告','视频广告'],
 				itemGap: 18,
 				textStyle: {
 					color: '#888',
@@ -54,24 +54,13 @@
 			},
 			//提示框
 			tooltip: {
-				trigger: 'item',
-				formatter: function (params) {
-					if (params.value.length > 1) {
-						return params.seriesName + ' :<br/>'
-							+ params.value[0] + 'cm '
-							+ params.value[1] + 'kg ';
-					}
-					else {
-						return params.seriesName + ' :<br/>'
-							+ params.name + ' : '
-							+ params.value + 'kg ';
-					}
-				},
+				trigger: 'axis',
 				backgroundColor: 'rgba(0,0,0,.7)',
 			},
 			//x轴
 			xAxis: {
-				type: 'value',
+				type: 'category',
+				data : ['周一','周二','周三','周四','周五','周六','周日'],
 				scale: true,
 				splitLine: {
 					show: false
@@ -86,7 +75,6 @@
 					show: false
 				},
 				axisLabel: {
-					formatter: '{value}cm',
 					textStyle: {
 						color: '#888',
 						fontSize: '12'
@@ -109,7 +97,6 @@
 					show: false
 				},
 				axisLabel: {
-					formatter: '{value}kg',
 					textStyle: {
 						color: '#888',
 						fontSize: '12'
@@ -120,9 +107,9 @@
 			//系列列表
 			series: [
 				{
-					name: '男性',
+					name: '邮件营销',
 					data: null,
-					type: 'scatter',
+					type: 'line',
 					itemStyle: {
 						normal: {
 							color: '#30a8ff'
@@ -130,12 +117,22 @@
 					}
 				},
 				{
-					name: '女性',
+					name: '联盟广告',
 					data: null,
-					type: 'scatter',
+					type: 'line',
 					itemStyle: {
 						normal: {
 							color: '#f53e3e'
+						}
+					}
+				},
+				{
+					name: '视频广告',
+					data: null,
+					type: 'line',
+					itemStyle: {
+						normal: {
+							color: '#000'
 						}
 					}
 				}]

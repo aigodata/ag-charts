@@ -155,7 +155,7 @@
           <div class="rx-fl ag-col-1-2 ag-padding-left-large">
             <div class="ag-chart-bg">
               <!--散点图 -- 圆点大小相等 -->
-              <div id="scatter-size-equality" class="ag-chart"></div>
+              <div id="scatter-size-equal" class="ag-chart"></div>
             </div>
           </div>
         </div>
@@ -163,24 +163,33 @@
     </div>
   </div>
 </div>
-<!--脚本库-->
+<!-- 脚本库 -->
 <script type="text/javascript" src="assets/scripts/jquery.min.js"></script>
 <script type="text/javascript" src="assets/scripts/axios.min.js"></script>
-<!--echarts 图表库-->
+<!-- echarts 图表库 -->
 <script type="text/javascript" src="src/echarts.min.js"></script>
 <!-- agChart -->
 <script type="text/javascript" src="src/ag-charts.js"></script>
-<!--散点图-->
+<!-- 散点图 圆点大小随机-->
 <script type="text/javascript" src="src/scatter/scatter-rand.js"></script>
+<!-- 散点图 圆点大小相等-->
+<script type="text/javascript" src="src/scatter/scatter-equal.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
   //scatter_size_rand.resize();
   //}
 
+  // 散点图 圆点大小随机
   axios.get('src/scatter/scatter-rand.json').then(function (response) {
     agChart.scatter.rand.init('#scatter-size-rand', '', response.data);
   });
+
+  // 散点图 圆点大小相等
+  axios.get('src/scatter/scatter-equal.json').then(function (response) {
+    agChart.scatter.equal.init('#scatter-size-equal', '', response.data);
+  });
+
 </script>
 </body>
 </html>

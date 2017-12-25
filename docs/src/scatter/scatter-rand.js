@@ -2,14 +2,14 @@
  * 散点图
  * 描述: 散点大小尺寸不一样
  */
-;(function (gloabal, fun) {
+;(function (global, fun) {
 	if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
 		module.exports = fun();
 	} else if (typeof define === 'function'
 		&& (typeof define.amd === 'object' || typeof define.cmd === 'object')) {
 		define(fun);
 	} else {
-		gloabal.agChart.scatter.rand = fun();
+		global.agChart.scatter.rand = fun();
 	}
 })(window, function () {
 	'use strict';
@@ -24,39 +24,39 @@
 			//标题
 			title: {
 				text: '1990 与 2015 年各国家人均寿命与 GDP',
-					textStyle: {
+				textStyle: {
 					color: '#888',
-						fontWeight: 'normal',
-						fontSize: 12
+					fontWeight: 'normal',
+					fontSize: 12
 				},
 				top: '20',
-					left: '20'
+				left: '20'
 			},
 			//网格
 			grid: {
 				top: '70',
-					left: '50',
-					right: '40',
-					height: '216'
+				left: '50',
+				right: '40',
+				bottom: '38'
 			},
 			//图例
 			legend: {
 				top: 20,
-					right: 20,
-					data: ['1990', '2015'],
-					itemGap: 18,
-					textStyle: {
+				right: 20,
+				data: ['1990', '2015'],
+				itemGap: 18,
+				textStyle: {
 					color: '#888',
-						fontSize: 12
+					fontSize: 12
 				},
 				itemWidth: 8,
-					itemHeight: 8
+				itemHeight: 8
 			},
 			//提示框
 			tooltip: {
 				trigger: 'item',
-					formatter: '{c}',
-					backgroundColor: 'rgba(0,0,0,.7)'
+				formatter: '{c}',
+				backgroundColor: 'rgba(0,0,0,.7)'
 			},
 			//x轴
 			xAxis: {
@@ -66,7 +66,7 @@
 				axisLine: {
 					lineStyle: {
 						color: '#efefef',
-							type: 'solid',
+						type: 'solid',
 					}
 				},
 				axisTick: {
@@ -75,7 +75,7 @@
 				axisLabel: {
 					textStyle: {
 						color: '#888',
-							fontSize: '12'
+						fontSize: '12'
 					}
 				}
 			},
@@ -84,7 +84,7 @@
 				splitLine: {
 					lineStyle: {
 						type: 'dashed',
-							color: '#e7e7e7'
+						color: '#e7e7e7'
 					}
 				},
 				axisLine: {
@@ -96,7 +96,7 @@
 				axisLabel: {
 					textStyle: {
 						color: '#888',
-							fontSize: '12'
+						fontSize: '12'
 					}
 				},
 				scale: true
@@ -167,13 +167,13 @@
 				}]
 		};
 
-		this.init = function(el, style, data) {
+		this.init = function (el, style, data) {
 			this.single = echarts.init(this.getDom(el));
 			this.setData(data);
 			this.single.setOption(this.option);
 		};
 
-		this.setData = function(data) {
+		this.setData = function (data) {
 			this.option.title.text = data.title;
 			this.option.legend.data = data.legend;
 
@@ -184,12 +184,12 @@
 			this.option.series[1].data = data.data[1];
 		};
 
-		this.setStyle = function() {
+		this.setStyle = function () {
 
 		};
 
-		this.resize = function() {
-				this.single.resize();
+		this.resize = function () {
+			this.single.resize();
 		};
 	}
 

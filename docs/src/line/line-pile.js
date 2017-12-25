@@ -35,7 +35,7 @@
 			//网格
 			grid: {
 				top: '70',
-				left: '65',
+				left: '58',
 				right: '40',
 				bottom: '38'
 			},
@@ -115,8 +115,8 @@
 					data: null,
 					smooth: true,
 					type: 'line',
-					symbol:'circle',
-					symbolSize:5,
+					symbol: 'circle',
+					symbolSize: 5,
 					itemStyle: {
 						normal: {
 							color: '#ff5050'
@@ -128,8 +128,8 @@
 					data: null,
 					smooth: true,
 					type: 'line',
-					symbol:'circle',
-					symbolSize:5,
+					symbol: 'circle',
+					symbolSize: 5,
 					itemStyle: {
 						normal: {
 							color: '#9bd80a'
@@ -141,8 +141,8 @@
 					data: null,
 					smooth: true,
 					type: 'line',
-					symbol:'circle',
-					symbolSize:5,
+					symbol: 'circle',
+					symbolSize: 5,
 					itemStyle: {
 						normal: {
 							color: '#30a8ff'

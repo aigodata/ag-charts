@@ -36,6 +36,7 @@
   background: #fff;
   border-right: 1px solid #e7e7e7;
   padding: 65px 0px 15px 20px;
+  z-index: 1;
 }
 
 .ag-sidebar ul {

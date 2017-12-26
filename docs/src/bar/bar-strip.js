@@ -1,6 +1,6 @@
 /*
  * 柱图
- * 描述: 分组柱状图
+ * 描述: 条形图
  */
 ;(function (global, fun) {
 	if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
@@ -9,7 +9,7 @@
 		&& (typeof define.amd === 'object' || typeof define.cmd === 'object')) {
 		define(fun);
 	} else {
-		global.agChart.bar.group = fun();
+		global.agChart.bar.strip = fun();
 	}
 })(window, function () {
 	'use strict';
@@ -23,7 +23,7 @@
 		this.option = {
 			//标题
 			title: {
-				text: '分组柱状图',
+				text: '条形图',
 				textStyle: {
 					color: '#888',
 					fontWeight: 'normal',
@@ -35,7 +35,7 @@
 			//网格
 			grid: {
 				top: '70',
-				left: '55',
+				left: '80',
 				right: '40',
 				bottom: '38'
 			},
@@ -43,7 +43,7 @@
 			legend: {
 				top: 20,
 				right: 20,
-				data: ['联盟广告', '视频广告'],
+				data: ['2011年', '2012年'],
 				itemGap: 18,
 				textStyle: {
 					color: '#888',
@@ -62,12 +62,30 @@
 			},
 			//x轴
 			xAxis: {
-				type: 'category',
-				data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-				scale: true,
+				type: 'value',
 				splitLine: {
+					lineStyle: {
+						type: 'dashed',
+						color: '#e7e7e7'
+					}
+				},
+				axisLine: {
 					show: false
 				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					textStyle: {
+						color: '#888',
+						fontSize: '12'
+					}
+				}
+			},
+			//y轴
+			yAxis: {
+				type: 'category',
+				data: ['巴西','印尼','美国','印度','中国','世界人口'],
 				axisLine: {
 					lineStyle: {
 						color: '#efefef',
@@ -82,55 +100,34 @@
 						color: '#888',
 						fontSize: '12'
 					}
-				}
-			},
-			//y轴
-			yAxis: {
-				type: 'value',
-				splitLine: {
-					lineStyle: {
-						type: 'dashed',
-						color: '#e7e7e7'
-					}
 				},
-				min: 0,
-				axisLine: {
-					show: false
+				name: '(万)',
+				nameTextStyle: {
+					color: '#888'
 				},
-				axisTick: {
-					show: false
-				},
-				axisLabel: {
-					textStyle: {
-						color: '#888',
-						fontSize: '12'
-					}
-				},
-				scale: true
+				nameGap:5
 			},
 			//系列列表
 			series: [
 				{
-					name: '联盟广告',
+					name: '2011年',
 					data: null,
 					type: 'bar',
-					barWidth: 16,
+					barWidth: 12,
 					itemStyle: {
 						normal: {
-							barBorderRadius: [6, 6, 0, 0],
-							color: '#6bd3ff'
+							color: '#4eaffa'
 						}
 					}
 				},
 				{
-					name: '视频广告',
+					name: '2012年',
 					data: null,
 					type: 'bar',
-					barWidth: 16,
+					barWidth: 12,
 					itemStyle: {
 						normal: {
-							barBorderRadius: [6, 6, 0, 0],
-							color: '#ff7b7c'
+							color: '#fedb37'
 						}
 					}
 				}]

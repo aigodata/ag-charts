@@ -261,6 +261,8 @@
 <script type="text/javascript" src="src/bar/bar-pile.js"></script>
 <!-- 柱图 分组柱状图 -->
 <script type="text/javascript" src="src/bar/bar-group.js"></script>
+<!-- 柱图 条形图 -->
+<script type="text/javascript" src="src/bar/bar-strip.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -305,6 +307,11 @@
   // 柱图 分组柱状图
   axios.get('src/bar/bar-group.json').then(function (response) {
     agChart.bar.group.init('#bar-group', '', response.data);
+  });
+
+  // 柱图 条形图
+  axios.get('src/bar/bar-strip.json').then(function (response) {
+    agChart.bar.strip.init('#bar-strip', '', response.data);
   });
 
 </script>

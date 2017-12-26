@@ -49,12 +49,15 @@
 					color: '#888',
 					fontSize: 12
 				},
-				itemWidth: 8,
-				itemHeight: 8
+				itemWidth: 10,
+				itemHeight: 3
 			},
 			//提示框
 			tooltip: {
-				trigger: 'item',
+				trigger: 'axis',
+				axisPointer: {
+					type: 'none'
+				},
 				backgroundColor: 'rgba(0,0,0,.7)',
 			},
 			//x轴

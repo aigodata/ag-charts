@@ -64,10 +64,10 @@
           <a href="#line">line 折线图</a>
         </li>
         <li>
-          <a href="bar">Bar 柱状图</a>
+          <a href="#bar">Bar 柱状图</a>
         </li>
         <li>
-          <a href="">Pie 饼图 (更新中...)</a>
+          <a href="#pie">Pie 饼图</a>
         </li>
         <li>
           <a href="">Radar 雷达图 (更新中...)</a>
@@ -235,6 +235,31 @@
           </div>
         </div>
       </div>
+      <!-- Pie 柱图 -->
+      <div id="pie" class="rx-each-item">
+        <!-- 标题 -->
+        <div class="rx-tit">
+          <h2>Pie 饼图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!-- 每个条目 -->
+        <div class="rx-clearfix ag-chart-item">
+          <!-- 每个条目 -- 饼图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-right-large">
+            <div class="ag-chart-bg">
+              <!-- 饼图 -- 环形图 -->
+              <div id="pie-annular" class="ag-chart"></div>
+            </div>
+          </div>
+          <!-- 每个条目 -- 饼图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-left-large">
+            <div class="ag-chart-bg">
+              <!-- 饼图 -- 饼图 -->
+              <div id="pie-pie" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -263,6 +288,10 @@
 <script type="text/javascript" src="src/bar/bar-group.js"></script>
 <!-- 柱图 条形图 -->
 <script type="text/javascript" src="src/bar/bar-strip.js"></script>
+<!-- 饼图 环形图 -->
+<script type="text/javascript" src="src/pie/pie-annular.js"></script>
+<!-- 饼图 饼图 -->
+<script type="text/javascript" src="src/pie/pie-pie.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -312,6 +341,16 @@
   // 柱图 条形图
   axios.get('src/bar/bar-strip.json').then(function (response) {
     agChart.bar.strip.init('#bar-strip', '', response.data);
+  });
+
+  // 饼图 环形图
+  axios.get('src/pie/pie-annular.json').then(function (response) {
+    agChart.pie.annular.init('#pie-annular', '', response.data);
+  });
+
+  // 饼图 饼图
+  axios.get('src/pie/pie-pie.json').then(function (response) {
+    agChart.pie.pie.init('#pie-pie', '', response.data);
   });
 
 </script>

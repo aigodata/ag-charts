@@ -19,7 +19,9 @@
 		// 折线图
 		line: {},
 		// 柱图
-		bar: {}
+		bar: {},
+		// 饼图
+		pie: {}
 	};
 
 	agChart.common = {

@@ -255,7 +255,7 @@
           <div class="rx-fl ag-col-1-2 ag-padding-left-large">
             <div class="ag-chart-bg">
               <!-- 饼图 -- 饼图 -->
-              <div id="pie-pie" class="ag-chart"></div>
+              <div id="pie-solid" class="ag-chart"></div>
             </div>
           </div>
         </div>
@@ -291,7 +291,7 @@
 <!-- 饼图 环形图 -->
 <script type="text/javascript" src="src/pie/pie-annular.js"></script>
 <!-- 饼图 饼图 -->
-<script type="text/javascript" src="src/pie/pie-pie.js"></script>
+<script type="text/javascript" src="src/pie/pie-solid.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -349,8 +349,8 @@
   });
 
   // 饼图 饼图
-  axios.get('src/pie/pie-pie.json').then(function (response) {
-    agChart.pie.pie.init('#pie-pie', '', response.data);
+  axios.get('src/pie/pie-solid.json').then(function (response) {
+    agChart.pie.solid.init('#pie-solid', '', response.data);
   });
 
 </script>

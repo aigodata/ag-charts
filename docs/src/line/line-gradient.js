@@ -64,7 +64,7 @@
 			xAxis: {
 				type: 'category',
 				boundaryGap: false,
-				data: ['2000-06-05', '2000-06-12', '2000-06-19', '2000-06-26', '2000-07-03', '2000-07-10', '2000-07-17','2000-07-24'],
+				data: null,
 				scale: true,
 				splitLine: {
 					show: false
@@ -72,7 +72,7 @@
 				axisLine: {
 					lineStyle: {
 						color: '#efefef',
-						type: 'solid',
+						type: 'solid'
 					}
 				},
 				axisTick: {
@@ -149,6 +149,7 @@
 
 			this.option.series[0].name = data.legend[0];
 			this.option.series[0].data = data.data[0];
+			this.option.xAxis.data = data.xAxis;
 
 		};
 

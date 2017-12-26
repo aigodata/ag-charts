@@ -85,7 +85,7 @@
 			//y轴
 			yAxis: {
 				type: 'category',
-				data: ['巴西','印尼','美国','印度','中国','世界人口'],
+				data: null,
 				axisLine: {
 					lineStyle: {
 						color: '#efefef',
@@ -101,7 +101,7 @@
 						fontSize: '12'
 					}
 				},
-				name: '(万)',
+				name: '(千万)',
 				nameTextStyle: {
 					color: '#888'
 				},
@@ -148,6 +148,8 @@
 
 			this.option.series[1].name = data.legend[1];
 			this.option.series[1].data = data.data[1];
+
+			this.option.yAxis.data = data.yAxis;
 		};
 
 		this.setStyle = function () {

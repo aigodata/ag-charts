@@ -59,6 +59,8 @@
 				formatter: "{b} : {c} ({d}%)",
 				backgroundColor: 'rgba(0,0,0,.7)',
 			},
+			// 颜色
+			color: ['#e86699','#f8c76c','#6cd1db','#7e78f3'],
 			//系列列表
 			series: [
 				{
@@ -71,58 +73,19 @@
 						}
 					},
 					startAngle: 180,
-					data: [
-						{
-							value: 80,
-							name: '邮件营销',
-							itemStyle: {
-								normal: {
-									color: '#e86699',
-									borderColor: '#fff',
-									borderWidth: 1
-								}
-							}
-						},
-						{
-							value: 80,
-							name: '直接访问',
-							itemStyle: {
-								normal: {
-									color: '#f8c76c',
-									borderColor: '#fff',
-									borderWidth: 1
-								}
-							}
-						},
-						{
-							value: 120,
-							name: '视频广告',
-							itemStyle: {
-								normal: {
-									color: '#6cd1db',
-									borderColor: '#fff',
-									borderWidth: 1
-								}
-							}
-						},
-						{
-							value: 60,
-							name: '联盟广告',
-							itemStyle: {
-								normal: {
-									color: '#7e78f3',
-									borderColor: '#fff',
-									borderWidth: 1
-								}
-							}
+					data: null,
+					itemStyle: {
+						normal: {
+							borderColor: '#fff',
+							borderWidth: 1
 						}
-					]
+					}
 				}]
 		};
 
 		this.init = function (el, style, data) {
 			this.single = echarts.init(this.getDom(el));
-			/*this.setData(data);*/
+			this.setData(data);
 			this.single.setOption(this.option);
 		};
 
@@ -130,17 +93,7 @@
 			this.option.title.text = data.title;
 			this.option.legend.data = data.legend;
 
-			/*this.option.series[0].name = data.legend[0];
-			this.option.series[0].data = data.data[0];
-
-			this.option.series[1].name = data.legend[1];
-			this.option.series[1].data = data.data[1];
-
-			this.option.series[2].name = data.legend[2];
-			this.option.series[2].data = data.data[2];
-
-			this.option.series[3].name = data.legend[3];
-			this.option.series[3].data = data.data[3];*/
+			this.option.series[0].data = data.data;
 		};
 
 		this.setStyle = function () {

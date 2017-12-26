@@ -63,7 +63,7 @@
 			//x轴
 			xAxis: {
 				type: 'category',
-				data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+				data: null,
 				scale: true,
 				splitLine: {
 					show: false
@@ -151,6 +151,8 @@
 
 			this.option.series[1].name = data.legend[1];
 			this.option.series[1].data = data.data[1];
+
+			this.option.xAxis.data = data.xAxis;
 		};
 
 		this.setStyle = function () {

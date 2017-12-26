@@ -114,6 +114,7 @@
 					name: '',
 					data: null,
 					type: 'line',
+					showSymbol: false,
 					symbol: 'circle',
 					symbolSize: 2,
 					itemStyle: {

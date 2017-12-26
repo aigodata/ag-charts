@@ -1,6 +1,6 @@
 /*
  * 柱图
- * 描述: 坐标轴刻度与标签对齐
+ * 描述: 堆叠柱状图
  */
 ;(function (global, fun) {
 	if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
@@ -9,7 +9,7 @@
 		&& (typeof define.amd === 'object' || typeof define.cmd === 'object')) {
 		define(fun);
 	} else {
-		global.agChart.bar.align = fun();
+		global.agChart.bar.pile = fun();
 	}
 })(window, function () {
 	'use strict';
@@ -23,7 +23,7 @@
 		this.option = {
 			//标题
 			title: {
-				text: '坐标轴刻度与标签对齐',
+				text: '堆叠柱状图',
 				textStyle: {
 					color: '#888',
 					fontWeight: 'normal',
@@ -35,7 +35,7 @@
 			//网格
 			grid: {
 				top: '70',
-				left: '55',
+				left: '60',
 				right: '40',
 				bottom: '38'
 			},
@@ -43,7 +43,7 @@
 			legend: {
 				top: 20,
 				right: 20,
-				data: [''],
+				data: ['邮件营销','联盟广告','视频广告'],
 				itemGap: 18,
 				textStyle: {
 					color: '#888',
@@ -108,21 +108,38 @@
 			//系列列表
 			series: [
 				{
-					name: '',
+					name: '邮件营销',
+					stack: '堆叠柱状图',
 					data: null,
 					type: 'bar',
 					barWidth: 22,
 					itemStyle: {
 						normal: {
-							barBorderRadius: [4, 4, 0, 0],
-							color: new echarts.graphic.LinearGradient(
-								0, 0, 0, 1,
-								[
-									{offset: 0, color: '#ff659b'},
-									{offset: 1, color: '#65caff'}
-
-								]
-							)
+							color: '#4eaffa'
+						}
+					}
+				},
+				{
+					name: '联盟广告',
+					stack: '堆叠柱状图',
+					data: null,
+					type: 'bar',
+					barWidth: 22,
+					itemStyle: {
+						normal: {
+							color: '#fedb37'
+						}
+					}
+				},
+				{
+					name: '视频广告',
+					stack: '堆叠柱状图',
+					data: null,
+					type: 'bar',
+					barWidth: 22,
+					itemStyle: {
+						normal: {
+							color: '#ff6c6d'
 						}
 					}
 				}]
@@ -140,6 +157,12 @@
 
 			this.option.series[0].name = data.legend[0];
 			this.option.series[0].data = data.data[0];
+
+			this.option.series[1].name = data.legend[1];
+			this.option.series[1].data = data.data[1];
+
+			this.option.series[2].name = data.legend[2];
+			this.option.series[2].data = data.data[2];
 		};
 
 		this.setStyle = function () {

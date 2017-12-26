@@ -240,6 +240,8 @@
 <script type="text/javascript" src="src/line/line-gradient.js"></script>
 <!-- 柱图 坐标轴刻度与标签对齐 -->
 <script type="text/javascript" src="src/bar/bar-align.js"></script>
+<!-- 柱图 堆叠柱状图 -->
+<script type="text/javascript" src="src/bar/bar-pile.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -274,6 +276,11 @@
   // 柱图 坐标轴刻度与标签对齐
   axios.get('src/bar/bar-align.json').then(function (response) {
     agChart.bar.align.init('#bar-align', '', response.data);
+  });
+
+  // 柱图 堆叠柱状图
+  axios.get('src/bar/bar-pile.json').then(function (response) {
+    agChart.bar.pile.init('#bar-pile', '', response.data);
   });
 
 </script>

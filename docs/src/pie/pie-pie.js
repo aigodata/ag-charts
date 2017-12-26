@@ -1,6 +1,6 @@
 /*
  * 饼图
- * 描述: 环形图
+ * 描述: 饼图
  */
 ;(function (global, fun) {
 	if (typeof exports !== 'undefined' && typeof module !== 'undefined') {

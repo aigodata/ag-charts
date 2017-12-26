@@ -17,7 +17,9 @@
 		// 散点图
 		scatter: {},
 		// 折线图
-		line: {}
+		line: {},
+		// 柱图
+		bar: {}
 	};
 
 	agChart.common = {

@@ -64,7 +64,7 @@
           <a href="#line">line 折线图</a>
         </li>
         <li>
-          <a href="">Bar 柱状图 (更新中...)</a>
+          <a href="bar">Bar 柱状图</a>
         </li>
         <li>
           <a href="">Pie 饼图 (更新中...)</a>
@@ -193,6 +193,31 @@
           </div>
         </div>
       </div>
+      <!--Bar 柱图-->
+      <div id="bar" class="rx-each-item">
+        <!--标题-->
+        <div class="rx-tit">
+          <h2>Bar 柱状图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!--每个条目-->
+        <div class="rx-clearfix ag-chart-item">
+          <!--每个条目 -- 柱图-->
+          <div class="rx-fl ag-col-1-2 ag-padding-right-large">
+            <div class="ag-chart-bg">
+              <!-- 柱图 -- 坐标刻度与标签对齐 -->
+              <div id="bar-align" class="ag-chart"></div>
+            </div>
+          </div>
+          <!--每个条目 -- 散点图-->
+          <div class="rx-fl ag-col-1-2 ag-padding-left-large">
+            <div class="ag-chart-bg">
+              <!-- 柱图 -- 堆叠 -->
+              <div id="bar-pile" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -213,6 +238,8 @@
 <script type="text/javascript" src="src/line/line-area.js"></script>
 <!-- 折线图 渐变 -->
 <script type="text/javascript" src="src/line/line-gradient.js"></script>
+<!-- 柱图 坐标轴刻度与标签对齐 -->
+<script type="text/javascript" src="src/bar/bar-align.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -242,6 +269,11 @@
   // 折线图 渐变
   axios.get('src/line/line-gradient.json').then(function (response) {
     agChart.line.gradient.init('#line-gradient', '', response.data);
+  });
+
+  // 柱图 坐标轴刻度与标签对齐
+  axios.get('src/bar/bar-align.json').then(function (response) {
+    agChart.bar.align.init('#bar-align', '', response.data);
   });
 
 </script>

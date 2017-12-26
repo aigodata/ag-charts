@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="assets/styles/custom.css">
   <!--图表样式-->
   <link rel="stylesheet" type="text/css" href="assets/styles/ag-charts.css">
@@ -135,7 +135,7 @@
           <p><a target="_blank" href="//github.com/aigodata/ag-charts">https://github.com/aigodata/ag-charts</a></p>
         </div>
       </div>
-      <!--Scatter 散点图-->
+      <!-- Scatter 散点图 -->
       <div id="scatter" class="rx-each-item">
         <!--标题-->
         <div class="rx-tit">
@@ -160,7 +160,7 @@
           </div>
         </div>
       </div>
-      <!--line 折线图-->
+      <!-- line 折线图 -->
       <div id="line" class="rx-each-item">
         <!--标题-->
         <div class="rx-tit">
@@ -193,27 +193,44 @@
           </div>
         </div>
       </div>
-      <!--Bar 柱图-->
+      <!-- Bar 柱图 -->
       <div id="bar" class="rx-each-item">
-        <!--标题-->
+        <!-- 标题 -->
         <div class="rx-tit">
           <h2>Bar 柱状图</h2>
           <p>我是描述文字</p>
         </div>
-        <!--每个条目-->
+        <!-- 每个条目 -->
         <div class="rx-clearfix ag-chart-item">
-          <!--每个条目 -- 柱图-->
+          <!-- 每个条目 -- 柱图 -->
           <div class="rx-fl ag-col-1-2 ag-padding-right-large">
             <div class="ag-chart-bg">
               <!-- 柱图 -- 坐标刻度与标签对齐 -->
               <div id="bar-align" class="ag-chart"></div>
             </div>
           </div>
-          <!--每个条目 -- 散点图-->
+          <!-- 每个条目 -- 柱图 -->
           <div class="rx-fl ag-col-1-2 ag-padding-left-large">
             <div class="ag-chart-bg">
               <!-- 柱图 -- 堆叠 -->
               <div id="bar-pile" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+        <!-- 每个条目 -->
+        <div class="rx-clearfix ag-chart-item">
+          <!-- 每个条目 -- 柱图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-right-large">
+            <div class="ag-chart-bg">
+              <!-- 柱图 -- 分组柱状图 -->
+              <div id="bar-group" class="ag-chart"></div>
+            </div>
+          </div>
+          <!--每个条目 -- 柱图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-left-large">
+            <div class="ag-chart-bg">
+              <!-- 柱图 -- 条形图 -->
+              <div id="bar-strip" class="ag-chart"></div>
             </div>
           </div>
         </div>
@@ -242,6 +259,8 @@
 <script type="text/javascript" src="src/bar/bar-align.js"></script>
 <!-- 柱图 堆叠柱状图 -->
 <script type="text/javascript" src="src/bar/bar-pile.js"></script>
+<!-- 柱图 分组柱状图 -->
+<script type="text/javascript" src="src/bar/bar-group.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -281,6 +300,11 @@
   // 柱图 堆叠柱状图
   axios.get('src/bar/bar-pile.json').then(function (response) {
     agChart.bar.pile.init('#bar-pile', '', response.data);
+  });
+
+  // 柱图 分组柱状图
+  axios.get('src/bar/bar-group.json').then(function (response) {
+    agChart.bar.group.init('#bar-group', '', response.data);
   });
 
 </script>

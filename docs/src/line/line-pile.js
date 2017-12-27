@@ -23,7 +23,7 @@
 		this.option = {
 			//标题
 			title: {
-				text: '折线图堆叠',
+				text: '折线图堆叠（访问量/天）',
 				textStyle: {
 					color: '#888',
 					fontWeight: 'normal',

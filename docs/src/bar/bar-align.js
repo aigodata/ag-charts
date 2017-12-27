@@ -23,7 +23,7 @@
 		this.option = {
 			//标题
 			title: {
-				text: '坐标轴刻度与标签对齐',
+				text: '坐标轴刻度与标签对齐（销售量）',
 				textStyle: {
 					color: '#888',
 					fontWeight: 'normal',

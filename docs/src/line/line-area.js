@@ -23,7 +23,7 @@
 		this.option = {
 			//标题
 			title: {
-				text: '堆叠区域图',
+				text: '堆叠区域图（访问量/天）',
 				textStyle: {
 					color: '#888',
 					fontWeight: 'normal',

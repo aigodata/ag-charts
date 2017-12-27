@@ -23,7 +23,7 @@
 		this.option = {
 			//标题
 			title: {
-				text: '折线图渐变',
+				text: '折线图渐变（销售量）',
 				textStyle: {
 					color: '#888',
 					fontWeight: 'normal',

@@ -117,15 +117,6 @@
 					symbolSize: function (data) {
 						return Math.sqrt(data[2]) / 8e2;
 					},
-					label: {
-						emphasis: {
-							show: true,
-							formatter: function (param) {
-								return param.data[3];
-							},
-							position: 'top'
-						}
-					},
 					itemStyle: {
 						normal: {
 							shadowBlur: 10,
@@ -147,15 +138,6 @@
 					type: 'scatter',
 					symbolSize: function (data) {
 						return Math.sqrt(data[2]) / 8e2;
-					},
-					label: {
-						emphasis: {
-							show: true,
-							formatter: function (param) {
-								return param.data[3];
-							},
-							position: 'top'
-						}
 					},
 					itemStyle: {
 						normal: {

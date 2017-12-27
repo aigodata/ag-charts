@@ -56,6 +56,11 @@
 			tooltip: {
 				trigger: 'item',
 				backgroundColor: 'rgba(0,0,0,.7)',
+				transitionDuration: 0.15,
+				textStyle: {
+					fontSize: 11
+				},
+				padding: [8,15]
 			},
 			//x轴
 			xAxis: {

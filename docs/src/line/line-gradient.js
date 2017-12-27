@@ -55,10 +55,16 @@
 			//提示框
 			tooltip: {
 				trigger: 'axis',
+				formatter:'{b}<br/>{c}（销售量）',
 				axisPointer: {
 					type: 'none'
 				},
-				backgroundColor: 'rgba(0,0,0,.7)'
+				backgroundColor: 'rgba(0,0,0,.7)',
+				transitionDuration: 0.15,
+				textStyle: {
+					fontSize: 11
+				},
+				padding: [8,15]
 			},
 			//x轴
 			xAxis: {

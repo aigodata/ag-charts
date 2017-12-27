@@ -56,8 +56,13 @@
 			//提示框
 			tooltip: {
 				trigger: 'item',
-				formatter: "{b} : {c} ({d}%)",
+				formatter: "",
 				backgroundColor: 'rgba(0,0,0,.7)',
+				transitionDuration: 0.15,
+				textStyle: {
+					fontSize: 11
+				},
+				padding: [8,15]
 			},
 			// 颜色
 			color: ['#e86699','#f8c76c','#6cd1db','#7e78f3'],
@@ -79,7 +84,10 @@
 							borderColor: '#fff',
 							borderWidth: 1
 						}
-					}
+					},
+					// 设置初始动画
+					animationType: 'scale',
+					animationEasing:'elasticOut'
 				}]
 		};
 

@@ -23,7 +23,7 @@
 
 /*右侧*/
 .ag-charts-content .rx-page-component {
-  padding: 0 30px 30px 270px;
+  padding: 0 20px 30px 220px;
 }
 
 /*侧边栏*/
@@ -32,7 +32,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 240px;
+  width: 200px;
   background: #fff;
   border-right: 1px solid #e7e7e7;
   padding: 65px 0px 15px 20px;
@@ -65,17 +65,17 @@
 }
 
 /*边距*/
-.ag-padding-left-large {
-  padding-left: 15px;
+.ag-padding-left {
+  padding-left: 10px;
 }
 
-.ag-padding-right-large {
-  padding-right: 15px;
+.ag-padding-right {
+  padding-right: 10px;
 }
 
 /*图表*/
 .ag-chart-item {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 /*图表背景*/

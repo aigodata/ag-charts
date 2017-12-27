@@ -84,10 +84,7 @@
 							borderColor: '#fff',
 							borderWidth: 1
 						}
-					},
-					// 设置初始动画
-					animationType: 'scale',
-					animationEasing:'elasticOut'
+					}
 				}]
 		};
 

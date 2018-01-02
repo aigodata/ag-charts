@@ -51,7 +51,8 @@
 				},
 				itemWidth: 6,
 				itemHeight: 6,
-				itemGap: 12
+				itemGap: 12,
+				icon: 'circle'
 			},
 			//提示框
 			tooltip: {

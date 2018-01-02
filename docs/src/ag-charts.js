@@ -21,7 +21,11 @@
 		// 柱图
 		bar: {},
 		// 饼图
-		pie: {}
+		pie: {},
+		// 雷达图
+		radar: {},
+		// 烛形图
+		candlestick: {}
 	};
 
 	agChart.common = {

@@ -1,32 +1,32 @@
-/*背景色*/
+/* 背景色 */
 .ag-charts-bg {
   background: #f6f6f6;
   overflow-y: hidden;
 }
 
-/*头部*/
+/* 头部 */
 .ag-charts-bg .aigo-header {
   position: fixed;
   z-index: 2;
 }
 
-/*外层*/
+/* 外层 */
 .ag-charts-bg .rx-wrap {
   padding-top: 50px;
 }
 
-/*内容*/
+/* 内容 */
 .ag-charts-content {
   height: 100%;
   overflow-y: auto;
 }
 
-/*右侧*/
+/* 右侧 */
 .ag-charts-content .rx-page-component {
   padding: 0 20px 30px 220px;
 }
 
-/*侧边栏*/
+/* 侧边栏 */
 .ag-sidebar {
   position: fixed;
   top: 0;
@@ -55,7 +55,7 @@
   color: #50aff2;
 }
 
-/*网格*/
+/* 网格 */
 .ag-col-1-1 {
   width: 100%;
 }
@@ -64,7 +64,7 @@
   width: 50%;
 }
 
-/*边距*/
+/* 边距 */
 .ag-padding-left {
   padding-left: 10px;
 }
@@ -73,21 +73,26 @@
   padding-right: 10px;
 }
 
-/*图表*/
+/* 图表 */
 .ag-chart-item {
   margin-top: 20px;
 }
 
-/*图表背景*/
+/* 图表背景 */
 .ag-chart-bg {
   background: #fff;
   box-shadow: 0 3px 14px rgba(110, 127, 136, .1);
 }
 
-/*每个图表*/
+/* 每个图表 */
 .ag-chart {
   width: 100%;
   height: 326px;
+}
+
+/* 每个图表 大 */
+.ag-chart-large {
+  height: 406px;
 }
 
 

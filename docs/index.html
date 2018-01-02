@@ -70,37 +70,37 @@
           <a href="#pie">Pie 饼图</a>
         </li>
         <li>
-          <a href="">Radar 雷达图 (更新中...)</a>
+          <a href="#radar">Radar 雷达图</a>
         </li>
         <li>
-          <a href="">Candlestick 烛形图 (更新中...)</a>
+          <a href="#candlestick">Candlestick 烛形图</a>
         </li>
         <!--<li>-->
-          <!--<a href="">Graph 关系图 (更新中...)</a>-->
+        <!--<a href="">Graph 关系图 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">Tree 树状图 (更新中...)</a>-->
+        <!--<a href="">Tree 树状图 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">Treemap 矩形树图 (更新中...)</a>-->
+        <!--<a href="">Treemap 矩形树图 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">Parallel 平行坐标 (更新中...)</a>-->
+        <!--<a href="">Parallel 平行坐标 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">Sankey 桑基图 (更新中...)</a>-->
+        <!--<a href="">Sankey 桑基图 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">Funnel 漏斗图 (更新中...)</a>-->
+        <!--<a href="">Funnel 漏斗图 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">Gauge 仪表盘 (更新中...)</a>-->
+        <!--<a href="">Gauge 仪表盘 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">日历图 (更新中...)</a>-->
+        <!--<a href="">日历图 (更新中...)</a>-->
         <!--</li>-->
         <!--<li>-->
-          <!--<a href="">Map 地图 (更新中...)</a>-->
+        <!--<a href="">Map 地图 (更新中...)</a>-->
         <!--</li>-->
       </ul>
     </div>
@@ -260,6 +260,47 @@
           </div>
         </div>
       </div>
+      <!-- Radar 雷达图 -->
+      <div id="radar" class="rx-each-item">
+        <!-- 标题 -->
+        <div class="rx-tit">
+          <h2>Radar 雷达图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!-- 每个条目 -->
+        <div class="rx-clearfix ag-chart-item">
+          <!-- 每个条目 -- 雷达图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-right">
+            <div class="ag-chart-bg">
+              <!-- 饼图 -- 线 -->
+              <div id="radar-line" class="ag-chart"></div>
+            </div>
+          </div>
+          <!-- 每个条目 -- 雷达图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-left">
+            <div class="ag-chart-bg">
+              <!-- 饼图 -- 区域 -->
+              <div id="radar-area" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Candlestick 烛形图 -->
+      <div id="candlestick" class="rx-each-item">
+        <!-- 标题-->
+        <div class="rx-tit">
+          <h2>Candlestick 烛形图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!-- 每个条目-->
+        <div class="ag-chart-item">
+          <!-- 每个条目 -- 烛形图 -->
+          <div class="ag-chart-bg">
+            <!-- 烛形图 -->
+            <div id="candlestick-demo" class="ag-chart ag-chart-large"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -292,6 +333,12 @@
 <script type="text/javascript" src="src/pie/pie-annular.js"></script>
 <!-- 饼图 饼图 -->
 <script type="text/javascript" src="src/pie/pie-solid.js"></script>
+<!-- 雷达图 线 -->
+<script type="text/javascript" src="src/radar/radar-line.js"></script>
+<!-- 雷达图 区域 -->
+<script type="text/javascript" src="src/radar/radar-area.js"></script>
+<!-- 烛形图 -->
+<script type="text/javascript" src="src/candlestick/candlestick-demo.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -351,6 +398,21 @@
   // 饼图 饼图
   axios.get('src/pie/pie-solid.json').then(function (response) {
     agChart.pie.solid.init('#pie-solid', '', response.data);
+  });
+
+  // 雷达图 线
+  axios.get('src/radar/radar-line.json').then(function (response) {
+    agChart.radar.line.init('#radar-line', '', response.data);
+  });
+
+  // 雷达图 区域
+  axios.get('src/radar/radar-area.json').then(function (response) {
+    agChart.radar.area.init('#radar-area', '', response.data);
+  });
+
+  // 烛形图
+  axios.get('src/candlestick/candlestick-demo.json').then(function (response) {
+    agChart.candlestick.demo.init('#candlestick-demo', '', response.data);
   });
 
 </script>

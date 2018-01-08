@@ -75,9 +75,9 @@
         <li>
           <a href="#candlestick">Candlestick 烛形图</a>
         </li>
-        <!--<li>-->
-        <!--<a href="">Graph 关系图 (更新中...)</a>-->
-        <!--</li>-->
+        <li>
+        <a href="#graph">Graph 关系图</a>
+        </li>
         <!--<li>-->
         <!--<a href="">Tree 树状图 (更新中...)</a>-->
         <!--</li>-->
@@ -232,7 +232,7 @@
           </div>
         </div>
       </div>
-      <!-- Pie 柱图 -->
+      <!-- Pie 饼图 -->
       <div id="pie" class="rx-each-item">
         <!-- 标题 -->
         <div class="rx-tit">
@@ -298,6 +298,31 @@
           </div>
         </div>
       </div>
+      <!-- Graph 关系图 -->
+      <div id="graph" class="rx-each-item">
+        <!-- 标题 -->
+        <div class="rx-tit">
+          <h2>Graph 关系图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!-- 每个条目 -->
+        <div class="rx-clearfix ag-chart-item">
+          <!-- 每个条目 -- 关系图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-right">
+            <div class="ag-chart-bg">
+              <!-- 关系图 -->
+              <div id="graph-circle" class="ag-chart"></div>
+            </div>
+          </div>
+          <!-- 每个条目 -- 关系图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-left">
+            <div class="ag-chart-bg">
+              <!-- 关系图 -->
+              <div id="graph-loose" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -336,6 +361,10 @@
 <script type="text/javascript" src="src/radar/radar-area.js"></script>
 <!-- 烛形图 -->
 <script type="text/javascript" src="src/candlestick/candlestick-demo.js"></script>
+<!-- 关系图 圆 -->
+<script type="text/javascript" src="src/graph/graph-circle.js"></script>
+<!-- 关系图 工具 -->
+<script type="text/javascript" src="src/graph/dataTool.min.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -411,6 +440,17 @@
   axios.get('src/candlestick/candlestick-demo.json').then(function (response) {
     agChart.candlestick.demo.init('#candlestick-demo', '', response.data);
   });
+
+  // 关系图 圆
+  /*axios.get('src/graph/graph-circle.json').then(function (response) {
+    agChart.graph.circle.init('#graph-circle', '', response.data);
+  });*/
+
+  // 关系图 圆
+  $.get('src/graph/les-miserables.gexf', function (xml) {
+    agChart.graph.circle.init('#graph-circle', '');
+  }, 'xml');
+
 
 </script>
 </body>

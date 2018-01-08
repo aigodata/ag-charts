@@ -25,7 +25,9 @@
 		// 雷达图
 		radar: {},
 		// 烛形图
-		candlestick: {}
+		candlestick: {},
+		// 关系图
+		graph: {}
 	};
 
 	agChart.common = {

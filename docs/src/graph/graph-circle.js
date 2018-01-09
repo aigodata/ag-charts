@@ -14,12 +14,6 @@
 })(window, function () {
 	'use strict';
 
-	var categories = [];
-	var graph = {
-		nodes: [],
-		links: []
-	};
-
 	function chart() {
 
 		this.name = "graph.circle";
@@ -28,17 +22,11 @@
 
 		this.option = {
 			title: {
-				text: 'Les Miserables',
-				subtext: 'Circular layout',
-				top: 'bottom',
-				left: 'right'
+				text: ''
 			},
-			tooltip: {},
 			legend: [{
 				// selectedMode: 'single',
-				data: categories.map(function (a) {
-					return a.name;
-				})
+				data: []
 			}],
 			animationDurationUpdate: 1500,
 			animationEasingUpdate: 'quinticInOut',
@@ -50,9 +38,9 @@
 					circular: {
 						rotateLabel: true
 					},
-					data: graph.nodes,
-					links: graph.links,
-					categories: categories,
+					data: [],
+					links: [],
+					categories: [],
 					roam: true,
 					label: {
 						normal: {
@@ -77,13 +65,9 @@
 		};
 
 		this.setData = function (data) {
-			// this.option.title.text = data.title;
-			// this.option.legend.data = data.legend;
-            //
-			// this.option.series[0].data = data.data;
-			//-----
-			graph = echarts.dataTool.gexf.parse(data);
-
+			// 数据处理
+			var categories = [];
+			var graph = echarts.dataTool.gexf.parse(data);
 			for (var i = 0; i < 9; i++) {
 				categories[i] = {
 					name: '类目' + i
@@ -100,6 +84,14 @@
 				};
 				node.category = node.attributes.modularity_class;
 			});
+			// 数据导入
+			this.option.title.text = data.title || '';
+			this.option.legend[0].data = categories.map(function (a) {
+				return a.name;
+			});
+			this.option.series[0].data = graph.nodes;
+			this.option.series[0].links = graph.links;
+			this.option.series[0].categories = categories;
 		};
 
 		this.setStyle = function () {

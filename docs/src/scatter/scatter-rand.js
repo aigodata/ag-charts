@@ -16,7 +16,7 @@
 
 	function chart() {
 
-		this.name = "scatter.band";
+		this.name = "scatter.rand";
 
 		this.single = null;
 

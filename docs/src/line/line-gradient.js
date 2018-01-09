@@ -16,7 +16,7 @@
 
 	function chart() {
 
-		this.name = "scatter.band";
+		this.name = "line.gradient";
 
 		this.single = null;
 

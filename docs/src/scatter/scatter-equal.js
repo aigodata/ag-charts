@@ -16,7 +16,7 @@
 
 	function chart() {
 
-		this.name = "scatter.band";
+		this.name = "scatter.equal";
 
 		this.single = null;
 

@@ -27,7 +27,13 @@
 		// 烛形图
 		candlestick: {},
 		// 关系图
-		graph: {}
+		graph: {},
+		// 平行坐标
+		parallel: {},
+		// 漏斗图
+		funnel:{},
+		// 仪表盘
+		gauge:{}
 	};
 
 	agChart.common = {

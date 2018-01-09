@@ -76,29 +76,29 @@
           <a href="#candlestick">Candlestick 烛形图</a>
         </li>
         <li>
-        <a href="#graph">Graph 关系图</a>
+          <a href="#graph">Graph 关系图</a>
         </li>
-        <!--<li>-->
-        <!--<a href="">Tree 树状图 (更新中...)</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="">Treemap 矩形树图 (更新中...)</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="">Parallel 平行坐标 (更新中...)</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="">Sankey 桑基图 (更新中...)</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="">Funnel 漏斗图 (更新中...)</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="">Gauge 仪表盘 (更新中...)</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="">Map 地图 (更新中...)</a>-->
-        <!--</li>-->
+        <li>
+          <a href="#tree">Tree 树状图</a>
+        </li>
+        <li>
+          <a href="#treemap">Treemap 矩形树图</a>
+        </li>
+        <li>
+          <a href="#parallel">Parallel 平行坐标</a>
+        </li>
+        <li>
+          <a href="#sankey">Sankey 桑基图</a>
+        </li>
+        <li>
+          <a href="#funnel">Funnel 漏斗图</a>
+        </li>
+        <li>
+          <a href="#gauge">Gauge 仪表盘</a>
+        </li>
+        <li>
+          <a href="#map">Map 地图</a>
+        </li>
       </ul>
     </div>
     <!--右侧-->
@@ -323,6 +323,161 @@
           </div>
         </div>
       </div>
+      <!-- Tree 树状图 -->
+      <div id="tree" class="rx-each-item">
+        <!--标题-->
+        <div class="rx-tit">
+          <h2>Tree 树状图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!--每个条目-->
+        <div class="ag-chart-item">
+          <!--每个条目 -- 树状图-->
+          <div class="ag-chart-bg">
+            <!-- 树状图 -->
+            <div id="tree-loose" class="ag-chart"></div>
+          </div>
+        </div>
+        <!--每个条目-->
+        <div class="ag-chart-item">
+          <!--每个条目 -- 树状图-->
+          <div class="ag-chart-bg">
+            <!-- 树状图 -->
+            <div id="tree-circle" class="ag-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Treemap 矩形树图 -->
+      <div id="treemap" class="rx-each-item">
+        <!--标题-->
+        <div class="rx-tit">
+          <h2>Treemap 矩形树图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!--每个条目-->
+        <div class="ag-chart-item">
+          <!--每个条目 -- 矩形树图-->
+          <div class="ag-chart-bg">
+            <!-- 矩形树图 -->
+            <div id="treemap-demo" class="ag-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Parallel 平行坐标 -->
+      <div id="parallel" class="rx-each-item">
+        <!--标题-->
+        <div class="rx-tit">
+          <h2>Parallel 平行坐标</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!--每个条目-->
+        <div class="ag-chart-item">
+          <!--每个条目 -- 平行坐标 -->
+          <div class="ag-chart-bg">
+            <!-- 平行坐标 -->
+            <div id="parallel-vertical" class="ag-chart"></div>
+          </div>
+        </div>
+        <!--每个条目-->
+        <div class="ag-chart-item">
+          <!--每个条目 -- 平行坐标 -->
+          <div class="ag-chart-bg">
+            <!-- 平行坐标 -->
+            <div id="parallel-horizontal" class="ag-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Sankey 桑基图 -->
+      <div id="sankey" class="rx-each-item">
+        <!--标题-->
+        <div class="rx-tit">
+          <h2>Sankey 桑基图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!--每个条目-->
+        <div class="ag-chart-item">
+          <!--每个条目 -- 桑基图 -->
+          <div class="ag-chart-bg">
+            <!-- 桑基图 -->
+            <div id="sankey-demo" class="ag-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Funnel 漏斗图 -->
+      <div id="funnel" class="rx-each-item">
+        <!-- 标题 -->
+        <div class="rx-tit">
+          <h2>Funnel 漏斗图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!-- 每个条目 -->
+        <div class="rx-clearfix ag-chart-item">
+          <!-- 每个条目 -- 漏斗图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-right">
+            <div class="ag-chart-bg">
+              <!-- 漏斗图 -->
+              <div id="funnel-contrast" class="ag-chart"></div>
+            </div>
+          </div>
+          <!-- 每个条目 -- 漏斗图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-left">
+            <div class="ag-chart-bg">
+              <!-- 漏斗图 -->
+              <div id="funnel-demo" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Gauge 仪表盘 -->
+      <div id="gauge" class="rx-each-item">
+        <!-- 标题 -->
+        <div class="rx-tit">
+          <h2>Gauge 仪表盘</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!-- 每个条目 -->
+        <div class="rx-clearfix ag-chart-item">
+          <!-- 每个条目 -- 仪表盘 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-right">
+            <div class="ag-chart-bg">
+              <!-- 仪表盘 -->
+              <div id="gauge-demo" class="ag-chart"></div>
+            </div>
+          </div>
+          <!-- 每个条目 -- 仪表盘 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-left">
+            <div class="ag-chart-bg">
+              <!-- 仪表盘 -->
+              <div id="" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Map 地图 -->
+      <div id="map" class="rx-each-item">
+        <!-- 标题 -->
+        <div class="rx-tit">
+          <h2>Map 地图</h2>
+          <p>我是描述文字</p>
+        </div>
+        <!-- 每个条目 -->
+        <div class="rx-clearfix ag-chart-item">
+          <!-- 每个条目 -- 地图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-right">
+            <div class="ag-chart-bg">
+              <!-- 地图 -->
+              <div id="map-demo" class="ag-chart"></div>
+            </div>
+          </div>
+          <!-- 每个条目 -- 地图 -->
+          <div class="rx-fl ag-col-1-2 ag-padding-left">
+            <div class="ag-chart-bg">
+              <!-- 地图 -->
+              <div id="" class="ag-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -365,6 +520,16 @@
 <script type="text/javascript" src="src/graph/graph-circle.js"></script>
 <!-- 关系图 工具 -->
 <script type="text/javascript" src="src/graph/dataTool.min.js"></script>
+<!-- 平行坐标 纵 -->
+<script type="text/javascript" src="src/parallel/parallel-vertical.js"></script>
+<!-- 平行坐标 横 -->
+<script type="text/javascript" src="src/parallel/parallel-horizontal.js"></script>
+<!-- 漏斗图 对比 -->
+<script type="text/javascript" src="src/funnel/funnel-contrast.js"></script>
+<!-- 漏斗图 -->
+<script type="text/javascript" src="src/funnel/funnel-demo.js"></script>
+<!-- 仪表盘 -->
+<script type="text/javascript" src="src/gauge/gauge-demo.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -442,14 +607,34 @@
   });
 
   // 关系图 圆
-  /*axios.get('src/graph/graph-circle.json').then(function (response) {
-    agChart.graph.circle.init('#graph-circle', '', response.data);
-  });*/
-
-  // 关系图 圆
-  $.get('src/graph/les-miserables.gexf', function (xml) {
-    agChart.graph.circle.init('#graph-circle', '');
+  $.get('src/graph/les-miserables.gexf').then(function (xml) {
+    agChart.graph.circle.init('#graph-circle', '', xml);
   }, 'xml');
+
+  // 平行坐标 纵
+  axios.get('src/parallel/parallel-vertical.json').then(function (response) {
+    agChart.parallel.vertical.init('#parallel-vertical', '', response.data);
+  });
+
+  // 平行坐标 横
+  axios.get('src/parallel/parallel-horizontal.json').then(function (response) {
+    agChart.parallel.horizontal.init('#parallel-horizontal', '', response.data);
+  });
+
+  // 漏斗图 对比
+  axios.get('src/funnel/funnel-contrast.json').then(function (response) {
+    agChart.funnel.contrast.init('#funnel-contrast', '', response.data);
+  });
+
+  // 漏斗图
+  axios.get('src/funnel/funnel-demo.json').then(function (response) {
+    agChart.funnel.demo.init('#funnel-demo', '', response.data);
+  });
+
+  // 仪表盘
+  axios.get('src/gauge/gauge-demo.json').then(function (response) {
+    agChart.gauge.demo.init('#gauge-demo', '', response.data);
+  });
 
 
 </script>

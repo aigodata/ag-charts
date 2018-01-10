@@ -20,51 +20,73 @@
 
 		this.single = null;
 
+		var indices = {
+			name: 0,
+			group: 1,
+			id: 16
+		};
+
 		var lineStyle = {
 			normal: {
-				width: 1,
-				opacity: 0.5
+				width: 0.5,
+				opacity: 0.05
 			}
 		};
 
+		var groupCategories = [];
+		var groupColors = [];
+
 		this.option = {
 			backgroundColor: '#333',
-			legend: {
-				bottom: 30,
-				data: null,
-				itemGap: 20,
-				textStyle: {
-					color: '#fff',
-					fontSize: 14
-				}
-			},
 			tooltip: {
 				padding: 10,
 				backgroundColor: '#222',
 				borderColor: '#777',
 				borderWidth: 1
 			},
-			parallelAxis: null,
+			title: [
+				{
+					text: 'Groups',
+					top: 0,
+					left: 0,
+					textStyle: {
+						color: '#fff'
+					}
+				}
+			],
 			visualMap: {
 				show: true,
-				min: 0,
-				max: 150,
-				dimension: 2,
+				type: 'piecewise',
+				categories: groupCategories,
+				dimension: indices.group,
 				inRange: {
-					color: ['#d94e5d','#eac736','#50a3ba'].reverse(),
-				}
+					color: groupColors //['#d94e5d','#eac736','#50a3ba']
+				},
+				outOfRange: {
+					color: ['#ccc'] //['#d94e5d','#eac736','#50a3ba']
+				},
+				top: 20,
+				textStyle: {
+					color: '#fff'
+				},
+				realtime: false
 			},
+			parallelAxis: null,
 			parallel: {
-				left: '5%',
-				right: '18%',
-				bottom: 100,
+				left: 280,
+				top: 20,
+				// top: 150,
+				// height: 300,
+				width: 400,
+				layout: 'vertical',
 				parallelAxisDefault: {
 					type: 'value',
+					name: 'nutrients',
 					nameLocation: 'end',
 					nameGap: 20,
 					nameTextStyle: {
 						color: '#fff',
-						fontSize: 12
+						fontSize: 14
 					},
 					axisLine: {
 						lineStyle: {
@@ -83,30 +105,25 @@
 						textStyle: {
 							color: '#fff'
 						}
-					}
+					},
+					realtime: false
 				}
 			},
+			animation: false,
 			series: [
 				{
-					name: null,
+					name: '',
 					type: 'parallel',
 					lineStyle: lineStyle,
-					data: null
-				},
-				{
-					name: null,
-					type: 'parallel',
-					lineStyle: lineStyle,
-					data: null
-				},
-				{
-					name: null,
-					type: 'parallel',
-					lineStyle: lineStyle,
+					inactiveOpacity: 0,
+					activeOpacity: 0.01,
+					progressive: 500,
+					smooth: true,
 					data: null
 				}
 			]
-		};
+
+		}
 
 		this.init = function (el, style, data) {
 			this.single = echarts.init(this.getDom(el));
@@ -115,17 +132,43 @@
 		};
 
 		this.setData = function (data) {
-			// this.option.title.text = data.title;
-			this.option.legend.data = data.legend;
+			// 数据处理
+			normalizeData(data.data);
+
+			function normalizeData(originData) {
+				var groupMap = {};
+				originData.forEach(function (row) {
+					var groupName = row[indices.group];
+					if (!groupMap.hasOwnProperty(groupName)) {
+						groupMap[groupName] = 1;
+					}
+				});
+
+				originData.forEach(function (row) {
+					row.forEach(function (item, index) {
+						if (index !== indices.name
+							&& index !== indices.group
+							&& index !== indices.id
+						) {
+							// Convert null to zero, as all of them under unit "g".
+							row[index] = parseFloat(item) || 0;
+						}
+					});
+				});
+
+				for (var groupName in groupMap) {
+					if (groupMap.hasOwnProperty(groupName)) {
+						groupCategories.push(groupName);
+					}
+				}
+				var hStep = Math.round(300 / (groupCategories.length - 1));
+				for (var i = 0; i < groupCategories.length; i++) {
+					groupColors.push(echarts.color.modifyHSL('#5A94DF', hStep * i));
+				}
+			}
 
 			this.option.series[0].name = data.legend[0];
-			this.option.series[0].data = data.data[0];
-
-			this.option.series[1].name = data.legend[1];
-			this.option.series[1].data = data.data[1];
-
-			this.option.series[2].name = data.legend[2];
-			this.option.series[2].data = data.data[2];
+			this.option.series[0].data = data.data;
 
 			this.option.parallelAxis = data.parallelAxis;
 		};

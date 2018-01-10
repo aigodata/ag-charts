@@ -518,12 +518,22 @@
 <script type="text/javascript" src="src/candlestick/candlestick-demo.js"></script>
 <!-- 关系图 圆 -->
 <script type="text/javascript" src="src/graph/graph-circle.js"></script>
+<!-- 关系图 散 -->
+<script type="text/javascript" src="src/graph/graph-loose.js"></script>
 <!-- 关系图 工具 -->
 <script type="text/javascript" src="src/graph/dataTool.min.js"></script>
+<!-- 树状图 散 -->
+<script type="text/javascript" src="src/tree/tree-loose.js"></script>
+<!-- 树状图 圆 -->
+<script type="text/javascript" src="src/tree/tree-circle.js"></script>
+<!-- 矩形树图 -->
+<script type="text/javascript" src="src/treemap/treemap-demo.js"></script>
 <!-- 平行坐标 纵 -->
 <script type="text/javascript" src="src/parallel/parallel-vertical.js"></script>
 <!-- 平行坐标 横 -->
 <script type="text/javascript" src="src/parallel/parallel-horizontal.js"></script>
+<!-- 桑基图 -->
+<script type="text/javascript" src="src/sankey/sankey-demo.js"></script>
 <!-- 漏斗图 对比 -->
 <script type="text/javascript" src="src/funnel/funnel-contrast.js"></script>
 <!-- 漏斗图 -->
@@ -611,6 +621,26 @@
     agChart.graph.circle.init('#graph-circle', '', xml);
   }, 'xml');
 
+  // 关系图 散
+  axios.get('src/graph/graph-loose.json').then(function (response) {
+    agChart.graph.loose.init('#graph-loose', '', response.data);
+  });
+
+  // 树状图 散
+  axios.get('src/tree/tree-loose.json').then(function (response) {
+    agChart.tree.loose.init('#tree-loose', '', response.data);
+  });
+
+  // 树状图 圆
+  axios.get('src/tree/tree-circle.json').then(function (response) {
+    agChart.tree.circle.init('#tree-circle', '', response.data);
+  });
+
+  // 矩形树图
+  axios.get('src/treemap/treemap-demo.json').then(function (response) {
+    agChart.treemap.demo.init('#treemap-demo', '', response.data);
+  });
+
   // 平行坐标 纵
   axios.get('src/parallel/parallel-vertical.json').then(function (response) {
     agChart.parallel.vertical.init('#parallel-vertical', '', response.data);
@@ -619,6 +649,11 @@
   // 平行坐标 横
   axios.get('src/parallel/parallel-horizontal.json').then(function (response) {
     agChart.parallel.horizontal.init('#parallel-horizontal', '', response.data);
+  });
+
+  // 桑基图
+  axios.get('src/sankey/sankey-demo.json').then(function (response) {
+    agChart.sankey.demo.init('#sankey-demo', '', response.data);
   });
 
   // 漏斗图 对比

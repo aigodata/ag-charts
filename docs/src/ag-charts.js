@@ -28,12 +28,18 @@
 		candlestick: {},
 		// 关系图
 		graph: {},
+		// 树状图
+		tree: {},
+		// 矩形树图
+		treemap: {},
 		// 平行坐标
 		parallel: {},
+		// 桑基图
+		sankey: {},
 		// 漏斗图
-		funnel:{},
+		funnel: {},
 		// 仪表盘
-		gauge:{}
+		gauge: {}
 	};
 
 	agChart.common = {

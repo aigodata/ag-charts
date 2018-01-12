@@ -450,14 +450,14 @@
           <div class="rx-fl ag-col-1-2 ag-padding-right">
             <div class="ag-chart-bg">
               <!-- 地图 -->
-              <div id="map-demo" class="ag-chart"></div>
+              <div id="map-dot" class="ag-chart"></div>
             </div>
           </div>
           <!-- 每个条目 -- 地图 -->
           <div class="rx-fl ag-col-1-2 ag-padding-left">
             <div class="ag-chart-bg">
               <!-- 地图 -->
-              <div id="" class="ag-chart"></div>
+              <div id="map-path" class="ag-chart"></div>
             </div>
           </div>
         </div>
@@ -540,6 +540,10 @@
 <script type="text/javascript" src="src/funnel/funnel-demo.js"></script>
 <!-- 仪表盘 -->
 <script type="text/javascript" src="src/gauge/gauge-demo.js"></script>
+<!-- 地图 散点 -->
+<script type="text/javascript" src="src/map/map-dot.js"></script>
+<!-- 地图 路线 -->
+<script type="text/javascript" src="src/map/map-path.js"></script>
 <script>
   // 当窗口变动时重新加载echarts图表
   //window.onresize = function () {
@@ -670,6 +674,16 @@
   axios.get('src/gauge/gauge-demo.json').then(function (response) {
     agChart.gauge.demo.init('#gauge-demo', '', response.data);
   });
+
+  // 地图 散点
+  axios.get('src/map/map-dot.json').then(function (response) {
+    agChart.map.dot.init('#map-dot', '', response.data);
+  });
+
+  // 地图 公交路线
+  /*axios.get('src/map/map-path.json').then(function (response) {
+    agChart.map.path.init('#map-path', '', response.data);
+  });*/
 
 
 </script>

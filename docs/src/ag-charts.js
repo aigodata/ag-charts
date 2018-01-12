@@ -39,7 +39,9 @@
 		// 漏斗图
 		funnel: {},
 		// 仪表盘
-		gauge: {}
+		gauge: {},
+		// 地图
+		map: {}
 	};
 
 	agChart.common = {

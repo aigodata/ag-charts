@@ -28,22 +28,14 @@
 			series: [
 				{
 					type: 'tree',
-
 					data: null,
-
 					top: '18%',
 					bottom: '14%',
-
 					layout: 'radial',
-
 					symbol: 'emptyCircle',
-
 					symbolSize: 7,
-
 					initialTreeDepth: 3,
-
 					animationDurationUpdate: 750
-
 				}
 			]
 		};

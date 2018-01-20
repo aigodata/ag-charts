@@ -22,10 +22,22 @@
 
 		this.option = {
 			legend: {
-				data: null
+				data: null,
+				top: 0,
+				left: 20,
+				itemGap: 18,
+				textStyle: {
+					color: '#888',
+					fontSize: 12
+				},
+				itemWidth: 8,
+				itemHeight: 8,
+				icon: 'circle'
 			},
+			color: ['#ef6e85', '#cbf648', '#c885de', '#92eef4', '#89c9f6'],
 			series: [{
 				type: 'graph',
+				height: '80',
 				layout: 'force',
 				animation: false,
 				label: {

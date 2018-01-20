@@ -73,6 +73,10 @@
   padding-right: 10px;
 }
 
+.ag-padding-20-0{
+  padding: 20px 0;
+}
+
 /* 图表 */
 .ag-chart-item {
   margin-top: 20px;
@@ -93,6 +97,11 @@
 /* 每个图表 大 */
 .ag-chart-large {
   height: 406px;
+}
+
+/* 每个图表 特大 */
+.ag-chart-large-big {
+  height: 600px;
 }
 
 

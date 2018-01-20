@@ -30,6 +30,37 @@
 			tooltip: {
 				trigger: 'item'
 			},
+			geo: {
+				map: '',
+				roam: true,   // 启用, 拖拽, 平移
+				scaleLimit: {
+					min: 0.7,   // 最小缩放比
+					max: 2    // 最大缩放比
+				},
+				label: {
+					normal: {
+						textStyle: {
+							color: '#fff',
+						},
+						show: false
+					},
+					emphasis: {
+						textStyle: {
+							color: '#fff'
+						},
+						show: true
+					}
+				},
+				itemStyle: {
+					normal: {
+						areaColor: '#21b3e2',
+						borderColor: '#0466b1'
+					},
+					emphasis: {
+						areaColor: 'rgba(38,134,243,0.9)'
+					}
+				}
+			},
 			bmap: {
 				center: [104.114129, 37.550339],
 				zoom: 5,
@@ -191,16 +222,21 @@
 			]
 		};
 
-		this.init = function (el, style, data) {
+		this.init = function (el, style, data, geoName, geo) {
+			echarts.registerMap(geoName, geo);
 			this.single = echarts.init(this.getDom(el));
 			this.setData(data);
+			this.setGeo(geoName);
 			this.single.setOption(this.option);
+		};
+
+		this.setGeo = function(name) {
+			this.option.geo.map = name;
 		};
 
 		this.setData = function (data) {
 			// 数据处理
 			this.option.title.text = data.title;
-
 
 			var geoCoordMap = data.geoCoordMap;
 			var data = data.data;

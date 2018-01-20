@@ -93,6 +93,7 @@
 						show: true,
 						formatter: '{b}'
 					},
+					roam: false,
 					itemStyle: {
 						normal: {
 							borderColor: '#fff'

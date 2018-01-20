@@ -25,13 +25,18 @@
 				trigger: 'item',
 				triggerOn: 'mousemove'
 			},
+			//图例
 			legend: {
-				top: '2%',
-				left: '3%',
-				orient: 'vertical',
-				data: null,
-				borderColor: '#c23531',
-				icon: 'rectangle'
+				top: 20,
+				left: 20,
+				data: [''],
+				itemGap: 18,
+				textStyle: {
+					color: '#888',
+					fontSize: 12
+				},
+				itemWidth: 8,
+				itemHeight: 8
 			},
 			series: [
 				{
@@ -39,10 +44,14 @@
 					name: null,
 					data: null,
 					top: '5%',
-					left: '7%',
-					bottom: '2%',
-					right: '60%',
+					left: 'center',
+					bottom: '5%',
+					right:'15%',
 					symbolSize: 7,
+					itemStyle:{
+						color:'#ff0',
+						borderColor:'#ff0'
+					},
 					label: {
 						normal: {
 							position: 'left',
@@ -60,39 +69,6 @@
 						}
 					},
 					expandAndCollapse: true,
-					animationDuration: 550,
-					animationDurationUpdate: 750
-
-				},
-				{
-					type: 'tree',
-					name: null,
-					data: null,
-					top: '20%',
-					left: '60%',
-					bottom: '22%',
-					right: '18%',
-					symbolSize: 7,
-					label: {
-						normal: {
-							position: 'left',
-							verticalAlign: 'middle',
-							align: 'right'
-						}
-					},
-
-					leaves: {
-						label: {
-							normal: {
-								position: 'right',
-								verticalAlign: 'middle',
-								align: 'left'
-							}
-						}
-					},
-
-					expandAndCollapse: true,
-
 					animationDuration: 550,
 					animationDurationUpdate: 750
 				}
@@ -111,9 +87,6 @@
 
 			this.option.series[0].name = data.legend[0];
 			this.option.series[0].data = data.data[0];
-
-			this.option.series[1].name = data.legend[1];
-			this.option.series[1].data = data.data[1];
 
 		};
 

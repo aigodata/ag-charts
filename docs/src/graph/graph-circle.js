@@ -26,10 +26,21 @@
 			},
 			legend: [{
 				// selectedMode: 'single',
-				data: []
+				data: [],
+				top: 15,
+				left: 20,
+				itemGap: 18,
+				textStyle: {
+					color: '#888',
+					fontSize: 12
+				},
+				itemWidth: 8,
+				itemHeight: 8,
+				icon: 'circle'
 			}],
 			animationDurationUpdate: 1500,
 			animationEasingUpdate: 'quinticInOut',
+			color: ['#e1667c', '#e69a7f', '#e4cf70', '#c9e27e', '#8cde98', '#7acacf', '#72a9d8', '#838dd9'],
 			series: [
 				{
 					name: 'Les Miserables',
@@ -41,7 +52,6 @@
 					data: [],
 					links: [],
 					categories: [],
-					roam: true,
 					label: {
 						normal: {
 							position: 'right',
@@ -53,7 +63,8 @@
 							color: 'source',
 							curveness: 0.3
 						}
-					}
+					},
+					width: '44%'
 				}
 			]
 		};
@@ -76,7 +87,7 @@
 			graph.nodes.forEach(function (node) {
 				node.itemStyle = null;
 				node.value = node.symbolSize;
-				node.symbolSize /= 1.5;
+				node.symbolSize /= 2;
 				node.label = {
 					normal: {
 						show: node.symbolSize > 10

@@ -290,20 +290,19 @@
           <p>我是描述文字</p>
         </div>
         <!-- 每个条目 -->
-        <div class="rx-clearfix ag-chart-item">
+        <div class="ag-chart-item">
           <!-- 每个条目 -- 关系图 -->
-          <div class="rx-fl ag-col-1-2 ag-padding-right">
-            <div class="ag-chart-bg">
-              <!-- 关系图 -->
-              <div id="graph-circle" class="ag-chart"></div>
-            </div>
+          <div class="ag-chart-bg">
+            <!-- 关系图 -->
+            <div id="graph-circle" class="ag-chart ag-chart-large-big"></div>
           </div>
+        </div>
+        <!-- 每个条目 -->
+        <div class="ag-chart-item">
           <!-- 每个条目 -- 关系图 -->
-          <div class="rx-fl ag-col-1-2 ag-padding-left">
-            <div class="ag-chart-bg">
-              <!-- 关系图 -->
-              <div id="graph-loose" class="ag-chart"></div>
-            </div>
+          <div class="ag-chart-bg">
+            <!-- 关系图 -->
+            <div id="graph-loose" class="ag-chart ag-chart-large-big ag-padding-20-0"></div>
           </div>
         </div>
       </div>
@@ -319,7 +318,7 @@
           <!--每个条目 -- 树状图-->
           <div class="ag-chart-bg">
             <!-- 树状图 -->
-            <div id="tree-loose" class="ag-chart"></div>
+            <div id="tree-loose" class="ag-chart-large-big"></div>
           </div>
         </div>
         <!--每个条目-->
@@ -343,7 +342,7 @@
           <!--每个条目 -- 矩形树图-->
           <div class="ag-chart-bg">
             <!-- 矩形树图 -->
-            <div id="treemap-demo" class="ag-chart"></div>
+            <div id="treemap-demo" class="ag-chart-large-big"></div>
           </div>
         </div>
       </div>
@@ -359,7 +358,7 @@
           <!--每个条目 -- 平行坐标 -->
           <div class="ag-chart-bg">
             <!-- 平行坐标 -->
-            <div id="parallel-vertical" class="ag-chart"></div>
+            <div id="parallel-vertical" class="ag-chart-large"></div>
           </div>
         </div>
         <!--每个条目-->
@@ -676,9 +675,12 @@
   });
 
   // 地图 散点
-  axios.get('src/map/map-dot.json').then(function (response) {
-    agChart.map.dot.init('#map-dot', '', response.data);
-  });
+  axios.all([
+    axios.get('src/map/map-dot.json'),
+    axios.get('src/map/geo/china.json')
+  ]).then(axios.spread(function (resData, resGeo) {
+      agChart.map.dot.init('#map-dot', '', resData.data, 'china', resGeo.data);
+    }));
 
   // 地图 公交路线
   /*axios.get('src/map/map-path.json').then(function (response) {

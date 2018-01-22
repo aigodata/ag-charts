@@ -62,24 +62,22 @@
 			// 雷达
 			radar: {
 				nameGap: 10,
-				name : {
-					textStyle : {
-						color : '#b8b8b8'
+				name: {
+					color: '#b8b8b8'
+				},
+				splitLine: {
+					lineStyle: {
+						color: '#dcdcdc'
 					}
 				},
-				splitLine : {
-					lineStyle : {
-						color : '#dcdcdc'
+				splitArea: {
+					areaStyle: {
+						color: ['#fff', '#f8f8f8']
 					}
 				},
-				splitArea : {
-					areaStyle : {
-						color : ['#fff','#f8f8f8']
-					}
-				},
-				axisLine : {
-					lineStyle : {
-						color : '#dcdcdc'
+				axisLine: {
+					lineStyle: {
+						color: '#dcdcdc'
 					}
 				},
 				indicator: null,

@@ -81,10 +81,8 @@
 					show: false
 				},
 				axisLabel: {
-					textStyle: {
-						color: '#888',
-						fontSize: '12'
-					}
+					color: '#888',
+					fontSize: '12'
 				}
 			},
 			//y轴
@@ -101,10 +99,8 @@
 					show: false
 				},
 				axisLabel: {
-					textStyle: {
-						color: '#888',
-						fontSize: '12'
-					}
+					color: '#888',
+					fontSize: '12'
 				},
 				name: '(千万)',
 				nameTextStyle: {

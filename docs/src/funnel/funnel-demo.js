@@ -22,66 +22,71 @@
 
 		this.option = {
 			title: {
-				text: null
+				text: null,
+				textStyle: {
+					color: '#888',
+					fontWeight: 'normal',
+					fontSize: 12
+				},
+				top: 10,
+				left: 10
 			},
 			tooltip: {
 				trigger: 'item',
 				formatter: "{a} <br/>{b} : {c}%"
 			},
 			legend: {
-				data: null
+				top: 10,
+				data: [''],
+				itemGap: 18,
+				textStyle: {
+					color: '#888',
+					fontSize: 12
+				},
+				itemWidth: 8,
+				itemHeight: 8
 			},
+			color: ['#7ef28f','#f8de6d','#ed8292','#60b1f9','#a88df8'],
 			series: [
 				{
-					name: '预期',
+					name: '',
 					type: 'funnel',
 					left: '10%',
+					top: 80,
+					//x2: 80,
+					bottom: 40,
 					width: '80%',
+					// height: {totalHeight} - y - y2,
+					min: 0,
+					max: 100,
+					minSize: '0%',
+					maxSize: '100%',
+					sort: 'descending',
+					gap: 2,
 					label: {
 						normal: {
-							formatter: '{b}预期'
+							show: true,
+							position: 'inside'
 						},
 						emphasis: {
-							position:'inside',
-							formatter: '{b}预期: {c}%'
+							textStyle: {
+								fontSize: 20
+							}
 						}
 					},
 					labelLine: {
 						normal: {
-							show: false
-						}
-					},
-					itemStyle: {
-						normal: {
-							opacity: 0.7
-						}
-					},
-					data: null
-				},
-				{
-					name: '实际',
-					type: 'funnel',
-					left: '10%',
-					width: '80%',
-					maxSize: '80%',
-					label: {
-						normal: {
-							position: 'inside',
-							formatter: '{c}%',
-							textStyle: {
-								color: '#fff'
+							length: 10,
+							lineStyle: {
+								width: 1,
+								type: 'solid'
 							}
-						},
-						emphasis: {
-							position:'inside',
-							formatter: '{b}实际: {c}%'
 						}
 					},
 					itemStyle: {
 						normal: {
-							opacity: 0.5,
 							borderColor: '#fff',
-							borderWidth: 2
+							borderWidth: 1
 						}
 					},
 					data: null
@@ -99,11 +104,8 @@
 			this.option.title.text = data.title;
 			this.option.legend.data = data.legend;
 
-			this.option.series[0].name = data.legend[0];
+			this.option.series[0].name = data.series.name;
 			this.option.series[0].data = data.data[0];
-
-			this.option.series[1].name = data.legend[1];
-			this.option.series[1].data = data.data[1];
 
 		};
 

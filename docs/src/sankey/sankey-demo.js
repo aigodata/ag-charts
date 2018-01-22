@@ -28,16 +28,21 @@
 				trigger: 'item',
 				triggerOn: 'mousemove'
 			},
+			color: ['#8cde98', '#e69a7f', '#e4cf70', '#c9e27e', '#e1667c'],
 			series: [
 				{
 					type: 'sankey',
+					top: 40,
+					bottom: 40,
+					left: 40,
+					right: 240,
 					layout: 'none',
 					data: null,
 					links: null,
 					itemStyle: {
 						normal: {
 							borderWidth: 1,
-							borderColor: '#aaa'
+							borderColor: 'rgba(0,0,0,0)'
 						}
 					},
 					lineStyle: {
@@ -45,6 +50,9 @@
 							color: 'source',
 							curveness: 0.5
 						}
+					},
+					label: {
+						color: '#888'
 					}
 				}
 			]
@@ -57,7 +65,6 @@
 		};
 
 		this.setData = function (data) {
-			this.option.title.text = data.title;
 
 			this.option.series[0].data = data.data.nodes;
 			this.option.series[0].links = data.data.links;

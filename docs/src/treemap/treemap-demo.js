@@ -62,11 +62,6 @@
 
 		this.option = {
 
-			title: {
-				text: '',
-				left: 'center'
-			},
-
 			tooltip: {
 				formatter: function (info) {
 					var value = info.value;
@@ -83,7 +78,7 @@
 					].join('');
 				}
 			},
-
+			color:['#e1667c','#e69a7f','#e4cf70','#c9e27e','#8cde98','#7acacf','#72a9d8','#838dd9','#a68ae1','#c885de','#f06aa6','#d266d6'],
 			series: [
 				{
 					name: '',
@@ -113,7 +108,6 @@
 
 		this.setData = function (data) {
 			// 数据处理
-			this.option.title.text = data.title;
 			this.option.series[0].name = data.legend[0];
 			this.option.series[0].data = data.data;
 

@@ -115,7 +115,7 @@
         <!--每段描述-->
         <div>
           <h3>前言</h3>
-          <p>ag-charts是站在巨人的肩膀上, 底层使用了大家熟悉图表库(例:echarts v3.8), 我们优化了展示. 对图表进行了封装.</p>
+          <p>ag-charts是站在巨人的肩膀上, 底层使用了大家熟悉图表库(例:echarts v4.0), 我们优化了展示. 对图表进行了封装.</p>
         </div>
         <div>
           <h3>自我介绍</h3>
@@ -326,7 +326,7 @@
           <!--每个条目 -- 树状图-->
           <div class="ag-chart-bg">
             <!-- 树状图 -->
-            <div id="tree-circle" class="ag-chart"></div>
+            <div id="tree-circle" class="ag-chart-large-big-special"></div>
           </div>
         </div>
       </div>
@@ -342,7 +342,7 @@
           <!--每个条目 -- 矩形树图-->
           <div class="ag-chart-bg">
             <!-- 矩形树图 -->
-            <div id="treemap-demo" class="ag-chart-large-big"></div>
+            <div id="treemap-demo" class="ag-chart-large"></div>
           </div>
         </div>
       </div>
@@ -366,7 +366,7 @@
           <!--每个条目 -- 平行坐标 -->
           <div class="ag-chart-bg">
             <!-- 平行坐标 -->
-            <div id="parallel-horizontal" class="ag-chart"></div>
+            <div id="parallel-horizontal" class="ag-chart-large-big"></div>
           </div>
         </div>
       </div>
@@ -382,7 +382,7 @@
           <!--每个条目 -- 桑基图 -->
           <div class="ag-chart-bg">
             <!-- 桑基图 -->
-            <div id="sankey-demo" class="ag-chart"></div>
+            <div id="sankey-demo" class="ag-chart-large"></div>
           </div>
         </div>
       </div>
@@ -395,20 +395,13 @@
         </div>
         <!-- 每个条目 -->
         <div class="rx-clearfix ag-chart-item">
-          <!-- 每个条目 -- 漏斗图 -->
-          <div class="rx-fl ag-col-1-2 ag-padding-right">
-            <div class="ag-chart-bg">
-              <!-- 漏斗图 -->
-              <div id="funnel-contrast" class="ag-chart"></div>
+            <!--每个条目 -- 漏斗图 -->
+            <div class="rx-fl ag-col-1-2 ag-padding-right">
+              <div class="ag-chart-bg">
+                <!-- 漏斗图 -->
+                <div id="funnel-demo" class="ag-chart"></div>
+              </div>
             </div>
-          </div>
-          <!-- 每个条目 -- 漏斗图 -->
-          <div class="rx-fl ag-col-1-2 ag-padding-left">
-            <div class="ag-chart-bg">
-              <!-- 漏斗图 -->
-              <div id="funnel-demo" class="ag-chart"></div>
-            </div>
-          </div>
         </div>
       </div>
       <!-- Gauge 仪表盘 -->
@@ -533,8 +526,6 @@
 <script type="text/javascript" src="src/parallel/parallel-horizontal.js"></script>
 <!-- 桑基图 -->
 <script type="text/javascript" src="src/sankey/sankey-demo.js"></script>
-<!-- 漏斗图 对比 -->
-<script type="text/javascript" src="src/funnel/funnel-contrast.js"></script>
 <!-- 漏斗图 -->
 <script type="text/javascript" src="src/funnel/funnel-demo.js"></script>
 <!-- 仪表盘 -->
@@ -657,11 +648,6 @@
   // 桑基图
   axios.get('src/sankey/sankey-demo.json').then(function (response) {
     agChart.sankey.demo.init('#sankey-demo', '', response.data);
-  });
-
-  // 漏斗图 对比
-  axios.get('src/funnel/funnel-contrast.json').then(function (response) {
-    agChart.funnel.contrast.init('#funnel-contrast', '', response.data);
   });
 
   // 漏斗图

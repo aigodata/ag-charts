@@ -28,14 +28,13 @@
 		};
 
 		this.option = {
-			backgroundColor: '#333',
 			legend: {
 				bottom: 30,
 				data: null,
 				itemGap: 20,
 				textStyle: {
-					color: '#fff',
-					fontSize: 14
+					color: '#888',
+					fontSize: 12
 				}
 			},
 			tooltip: {
@@ -51,7 +50,7 @@
 				max: 150,
 				dimension: 2,
 				inRange: {
-					color: ['#d94e5d','#eac736','#50a3ba'].reverse(),
+					color: ['#f0516d ','#c17be6','#55a7ee'].reverse(),
 				}
 			},
 			parallel: {
@@ -68,24 +67,20 @@
 					},
 					axisLine: {
 						lineStyle: {
-							color: '#aaa'
+							color: '#d7d7d7',
+							type: 'solid',
 						}
 					},
 					axisTick: {
-						lineStyle: {
-							color: '#777'
-						}
-					},
-					splitLine: {
 						show: false
 					},
 					axisLabel: {
-						textStyle: {
-							color: '#fff'
-						}
+						color: '#888',
+						fontSize: '12'
 					}
 				}
 			},
+			color: ['#f0516d ','#c17be6','#55a7ee'],
 			series: [
 				{
 					name: null,

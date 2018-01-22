@@ -46,14 +46,15 @@
 					top: '5%',
 					left: 'center',
 					bottom: '5%',
-					right:'15%',
+					right: '20%',
 					symbolSize: 7,
-					itemStyle:{
-						color:'#ff0',
-						borderColor:'#ff0'
+					itemStyle: {
+						color: '#00a0e9',
+						borderColor: '#00a0e9'
 					},
 					label: {
 						normal: {
+							color: '#888',
 							position: 'left',
 							verticalAlign: 'middle',
 							align: 'right'
@@ -62,6 +63,7 @@
 					leaves: {
 						label: {
 							normal: {
+								color: '#888',
 								position: 'right',
 								verticalAlign: 'middle',
 								align: 'left'

@@ -96,12 +96,18 @@
 
 /* 每个图表 大 */
 .ag-chart-large {
+  width: 100%;
   height: 406px;
 }
 
 /* 每个图表 特大 */
 .ag-chart-large-big {
+  width: 100%;
   height: 600px;
 }
 
-
+/* 每个图表 特大 特殊处理 */
+.ag-chart-large-big-special {
+  width: 100%;
+  height: 800px;
+}

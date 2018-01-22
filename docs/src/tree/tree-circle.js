@@ -29,11 +29,20 @@
 				{
 					type: 'tree',
 					data: null,
-					top: '18%',
+					top: '26%',
 					bottom: '14%',
 					layout: 'radial',
 					symbol: 'emptyCircle',
 					symbolSize: 7,
+					itemStyle: {
+						color: '#00a0e9',
+						borderColor: '#00a0e9'
+					},
+					label: {
+						normal: {
+							color: '#888'
+						}
+					},
 					initialTreeDepth: 3,
 					animationDurationUpdate: 750
 				}

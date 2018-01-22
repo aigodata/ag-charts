@@ -63,9 +63,7 @@
 			radar: {
 				nameGap: 10,
 				name : {
-					textStyle : {
-						color : '#b8b8b8'
-					}
+					color : '#b8b8b8'
 				},
 				splitLine : {
 					lineStyle : {

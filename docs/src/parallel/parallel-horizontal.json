@@ -1,5 +1,5 @@
 {
-  "title": "",
+  "title": "Groups",
   "legend": ["nutrients"],
   "parallelAxis": [
     {"dim": 16, "name": "id", "scale": true, "nameLocation": "end"},

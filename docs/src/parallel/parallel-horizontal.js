@@ -37,7 +37,6 @@
 		var groupColors = [];
 
 		this.option = {
-			backgroundColor: '#333',
 			tooltip: {
 				padding: 10,
 				backgroundColor: '#222',
@@ -46,11 +45,12 @@
 			},
 			title: [
 				{
-					text: 'Groups',
-					top: 0,
+					text: '',
+					top: 5,
 					left: 0,
 					textStyle: {
-						color: '#fff'
+						color: '#888',
+						fontSize:16
 					}
 				}
 			],
@@ -65,9 +65,10 @@
 				outOfRange: {
 					color: ['#ccc'] //['#d94e5d','#eac736','#50a3ba']
 				},
-				top: 20,
+				top: 70,
+				itemGap:5,
 				textStyle: {
-					color: '#fff'
+					color: '#888'
 				},
 				realtime: false
 			},
@@ -85,26 +86,21 @@
 					nameLocation: 'end',
 					nameGap: 20,
 					nameTextStyle: {
-						color: '#fff',
+						color: '#888',
 						fontSize: 14
 					},
 					axisLine: {
 						lineStyle: {
-							color: '#aaa'
+							color: '#d7d7d7',
+							type: 'solid',
 						}
 					},
 					axisTick: {
-						lineStyle: {
-							color: '#777'
-						}
-					},
-					splitLine: {
 						show: false
 					},
 					axisLabel: {
-						textStyle: {
-							color: '#fff'
-						}
+						color: '#888',
+						fontSize: '12'
 					},
 					realtime: false
 				}
@@ -133,6 +129,8 @@
 
 		this.setData = function (data) {
 			// 数据处理
+			this.option.title.text = data.title;
+
 			normalizeData(data.data);
 
 			function normalizeData(originData) {
@@ -163,7 +161,7 @@
 				}
 				var hStep = Math.round(300 / (groupCategories.length - 1));
 				for (var i = 0; i < groupCategories.length; i++) {
-					groupColors.push(echarts.color.modifyHSL('#5A94DF', hStep * i));
+					groupColors.push(echarts.color.modifyHSL('#ed6a81', hStep * i));
 				}
 			}
 

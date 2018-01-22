@@ -66,6 +66,7 @@
 					color: ['#ccc'] //['#d94e5d','#eac736','#50a3ba']
 				},
 				top: 70,
+				left:20,
 				itemGap:5,
 				textStyle: {
 					color: '#888'
@@ -74,11 +75,11 @@
 			},
 			parallelAxis: null,
 			parallel: {
-				left: 280,
-				top: 20,
+				left: 300,
+				top: 30,
+				right:200,
 				// top: 150,
 				// height: 300,
-				width: 400,
 				layout: 'vertical',
 				parallelAxisDefault: {
 					type: 'value',

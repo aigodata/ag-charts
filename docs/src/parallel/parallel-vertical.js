@@ -50,11 +50,13 @@
 				max: 150,
 				dimension: 2,
 				inRange: {
-					color: ['#f0516d ','#c17be6','#55a7ee'].reverse(),
-				}
+					color: ['#f0516d ', '#c17be6', '#55a7ee'].reverse(),
+				},
+				left: 20,
+				bottom: 20
 			},
 			parallel: {
-				left: '5%',
+				left: '10%',
 				right: '18%',
 				bottom: 100,
 				parallelAxisDefault: {
@@ -80,7 +82,7 @@
 					}
 				}
 			},
-			color: ['#f0516d ','#c17be6','#55a7ee'],
+			color: ['#f0516d ', '#c17be6', '#55a7ee'],
 			series: [
 				{
 					name: null,

@@ -21,14 +21,52 @@
 		this.single = null;
 
 		this.option = {
-			tooltip : {
+			tooltip: {
 				formatter: "{a} <br/>{b} : {c}%"
 			},
 			series: [
 				{
 					name: '业务指标',
 					type: 'gauge',
-					detail: {formatter:'{value}%'},
+					center: ['50%', '56%'],
+					axisLine: {
+						lineStyle: {
+							color: [[1, new echarts.graphic.LinearGradient(
+								0, 0, 1, 0,
+								[
+									{offset: 0, color: '#4ecbff'},
+									{offset: 1, color: '#f6406f'}
+
+								]
+							)]],
+							width: 20
+						}
+					},
+					axisLabel: {
+						color: '#888'
+					},
+					axisTick: {
+						length: 8,
+						lineStyle: {
+							color: '#ff'
+						}
+					},
+					splitLine: {
+						length: 20,
+						lineStyle: {
+							width: 1,
+							color: '#fff',
+						}
+					},
+					pointer: {
+						length: '72%',
+						width: 6
+					},
+					detail: {
+						formatter: '{value}%',
+						color: '#333',
+						fontSize: 22
+					},
 					data: null
 				}
 			]

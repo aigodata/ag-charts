@@ -51,18 +51,18 @@
 				{
 					name: '',
 					type: 'funnel',
-					left: '10%',
+					left: 'center',
 					top: 80,
 					//x2: 80,
 					bottom: 40,
-					width: '80%',
+					width: 340,
 					// height: {totalHeight} - y - y2,
 					min: 0,
 					max: 100,
 					minSize: '0%',
 					maxSize: '100%',
 					sort: 'descending',
-					gap: 2,
+					gap: 0,
 					label: {
 						normal: {
 							show: true,

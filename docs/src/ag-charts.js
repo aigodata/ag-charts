@@ -10,10 +10,10 @@
 	} else {
 		gloabal.agChart = fun();
 	}
-})(window, function (agChart) {
+})(window, function (chart) {
 	'use strict';
 
-	agChart = {
+	chart = {
 		// 散点图
 		scatter: {},
 		// 折线图
@@ -44,7 +44,7 @@
 		map: {}
 	};
 
-	agChart.common = {
+	chart.common = {
 		init: function () {
 
 		},
@@ -65,5 +65,5 @@
 		}
 	};
 
-	return agChart;
+	return chart;
 });
